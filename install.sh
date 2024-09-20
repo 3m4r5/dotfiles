@@ -33,10 +33,10 @@ chmod +x ~/.local/bin/cliphist
 
 # config:
 cd ~
-git clone https://github.com/3m4r5/3m4r5.git
-cp -r ~/3m4r5/.config/* ~/.config/
-cp ~/3m4r5/.config/.bash_aliases ~/3m4r5/.config/.gitignore ~/.config/
-rm -rf 3m4r5
+git clone https://github.com/3m4r5/dotfiles.git
+cp -r ~/dotfiles/* ~/.config/
+cp ~/dotfiles/.bash_aliases ~/dotfiles/.gitignore ~/.config/
+rm -rf dotfiles
 chmod +x ~/.config/scripts/*
 
 # flathub:
