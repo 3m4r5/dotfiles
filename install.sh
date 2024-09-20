@@ -14,7 +14,7 @@ sudo dnf -y copr enable solopasha/hyprland
 
 # list installed packages: dnf repoquery --userinstalled
 #                 for vscode  V                 for junction and Zen V            for yazi V             V for btop
-sudo dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland
+sudo dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3-requests
 
 mkdir ~/.config
 mkdir ~/.local/bin
@@ -35,6 +35,7 @@ chmod +x ~/.local/bin/cliphist
 cd ~
 git clone https://github.com/3m4r5/3m4r5.git
 cp -r ~/3m4r5/.config/* ~/.config/
+cp ~/3m4r5/.config/.bash_aliases ~/3m4r5/.config/.gitignore ~/.config/
 rm -rf 3m4r5
 chmod +x ~/.config/scripts/*
 
