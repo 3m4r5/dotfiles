@@ -57,7 +57,7 @@
         "on-click": "activate"
     },
     "custom/launcher": {
-        "format": "<span font='Font Awesome 6 Pro'></span>",
+        "format": "",
         "tooltip": false,
         "on-click": "rofi -show drun -theme \"$HOME/.config/rofi/launchers/type-3/style-2.rasi\""
     },
@@ -66,8 +66,8 @@
         "tooltip": true,
         "on-click": ".config/scripts/safecharging.sh",
         "format-icons": {
-            "on" : "🔒",
-            "off" : "🔓"
+            "on": "🔒",
+            "off": "🔓"
         }
     },
     "custom/power": {
@@ -128,7 +128,10 @@
     "hyprland/scratchpad": {
         "format": "{icon} {count}",
         "show-empty": false,
-        "format-icons": ["", ""],
+        "format-icons": [
+            "",
+            ""
+        ],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
@@ -156,14 +159,14 @@
             "playing": ""
         },
         "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+        "tooltip-format-disconnected": "MPD (disconnected)",
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
     },
     "tray": {
         // "icon-size": 21,
@@ -180,7 +183,8 @@
         "tooltip": true,
         "on-click": "kitty btop"
     },
-    "custom/playerctl": { // credits: https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/skel/.config/waybar/config.jsonc
+    "custom/playerctl": {
+        // credits: https://github.com/Ubuntu-Sway/ubuntu-sway-default-settings/blob/noble/common/etc/skel/.config/waybar/config.jsonc
         "interval": "once",
         "tooltip": true,
         "return-type": "json",
@@ -204,26 +208,26 @@
         "exec": ".config/scripts/weather.py",
         "return-type": "json",
         "format-icons": {
-           "Unknown": "✨",
-           "Cloudy": "",
-           "Fog": "🌫",
-           "HeavyRain": "🌧",
-           "HeavyShowers": "🌧",
-           "HeavySnow": "❄️",
-           "HeavySnowShowers": "❄️",
-           "LightRain": "🌦",
-           "LightShowers": "🌦",
-           "LightSleet": "🌧",
-           "LightSleetShowers": "🌧",
-           "LightSnow": "🌨",
-           "LightSnowShowers": "🌨",
-           "PartlyCloudy": "⛅️",
-           "Sunny": "☀️",
-           "ThunderyHeavyRain": "🌩",
-           "ThunderyShowers": "⛈",
-           "ThunderySnowShowers": "⛈",
-           "VeryCloudy": ""
-        }
+            "Unknown": "✨",
+            "Cloudy": "",
+            "Fog": "🌫",
+            "HeavyRain": "🌧",
+            "HeavyShowers": "🌧",
+            "HeavySnow": "❄️",
+            "HeavySnowShowers": "❄️",
+            "LightRain": "🌦",
+            "LightShowers": "🌦",
+            "LightSleet": "🌧",
+            "LightSleetShowers": "🌧",
+            "LightSnow": "🌨",
+            "LightSnowShowers": "🌨",
+            "PartlyCloudy": "⛅️",
+            "Sunny": "☀️",
+            "ThunderyHeavyRain": "🌩",
+            "ThunderyShowers": "⛈",
+            "ThunderySnowShowers": "⛈",
+            "VeryCloudy": ""
+        },
     },
     "memory": {
         "format": "{}% ",
@@ -235,13 +239,23 @@
         "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
         // "exec": "sensors | tr '\n' ' '"
     },
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["🌑", "🌘", "🌗", "🌖", "🌕"]
+        "format-icons": [
+            "🌑",
+            "🌘",
+            "🌗",
+            "🌖",
+            "🌕"
+        ],
     },
     "battery": {
         "states": {
@@ -256,21 +270,27 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
     },
     "battery#bat2": {
         "bat": "BAT2"
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        },
     },
     // "network": {
     //     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -282,7 +302,8 @@
     //     "format-alt": "{ifname}: {ipaddr}/{cidr}",
     //     "on-click": "nm-applet"
     // },
-    "network": { // https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json
+    "network": {
+        // https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json
         "format": "{ifname}",
         "format-wifi": "{signalStrength}% ",
         "format-ethernet": "{ifname} ",
@@ -300,7 +321,7 @@
         "format": "{percentage_used}% ",
         "path": "/",
         "on-click": "alacritty -e htop"
-    }, 
+    },
     "bluetooth": {
         "format": " {status}",
         "format-disabled": "",
@@ -324,7 +345,11 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
@@ -339,5 +364,5 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+    },
 }
