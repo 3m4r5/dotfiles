@@ -230,7 +230,7 @@
         },
     },
     "memory": {
-        "format": "{}% ",
+        "format": "{}% ",
         "on-click": "kitty btop"
     },
     "temperature": {
