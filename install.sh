@@ -120,6 +120,8 @@ hyprland:
 waybr: sensors module
 bar: display window icons in workspace module
 
+powermenu: add hibernate, reload, bios
+
 other:
 - hyprland, bar, bash, zsh, yazi, zellij, kitty, rofimoji config
 - notification management
