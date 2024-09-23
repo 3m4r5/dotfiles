@@ -1,4 +1,3 @@
-alias bios='sudo systemctl reboot --firmware-setup'
 alias mv='mv -n'
 alias lsa='ls -a'
 

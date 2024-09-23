@@ -1,10 +1,57 @@
+/* env GTK_DEBUG=interactive waybar */
+/* :not(.active){
+    all: unset;
+} */
 * {
     font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
     font-size: 15px;
-    border-radius: 5px;
-    color: #ffffff;
+    border-radius: 20px;
 }
+#waybar {
+    color: white;
+}
+/* #tray .active {
+    color: white;
+    background-color: white;
+}
+#tray .active * {
+    background-color: black;
+} */
 
+.module {
+    /* background-color: #72a8d1; */
+    padding: 0 8px;
+}
+#workspaces,
+#window {
+    background-color: transparent;
+}
+.module:hover {
+    background-color: #333333;
+}
+#backlight-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#backlight-slider trough {
+    min-height: 20px;
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+#backlight-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+#pulseaudio-slider trough, #backlight-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+}
 window#waybar {
     background-color: rgba(43, 48, 59, 0);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
@@ -21,7 +68,7 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-    background-color: #000000;
+    background-color: black;
     border: none;
 }
 
@@ -45,7 +92,8 @@ button:hover {
 }
 
 #workspaces button.active {
-    box-shadow: inset 0 30px #72a8d1;
+    box-shadow: inset 0 30px #252525;
+    border-radius: 10px;
 }
 
 #workspaces button:hover {
@@ -72,61 +120,10 @@ button:hover {
     min-width: 55px;
 }
 
-#clock,
-#battery, #battery.charging, #battery.plugged,
-#language,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio, #pulseaudio.muted,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor, #idle_inhibitor.activated,
-#scratchpad,
-#power-profiles-daemon, #power-profiles-daemon.performance, #power-profiles-daemon.balanced, #power-profiles-daemon.power-saver,
-#mpd, #mpd.stopped, #mpd.paused,
-#keyboard-state,
-#wireplumber, #wireplumber.muted,
-#custom-media,
-#custom-playerctl,
-#custom-weather,
-#custom-emoji,
-#custom-clipboard,
-label:focus,
-#custom-power,
-#custom-safecharging,
-#custom-launcher,
-#custom-keybinds {
-    padding: 0 8px;
-    background-color: #72a8d1;
-}
-
 #custom-keybinds {
     padding: 0 10 0 8px
 }
-/* you can set a style on hover for any module like this */
-#tray:hover,
-#clock:hover,
-#network:hover,
-#pulseaudio:hover,
-#power-profiles-daemon:hover,
-#cpu:hover,
-#memory:hover,
-#custom-playerctl:hover,
-#custom-emoji:hover,
-#custom-clipboard:hover,
-#custom-power:hover,
-#language:hover,
-#custom-safecharging:hover,
-#custom-launcher:hover,
-#custom-keybinds:hover {
-    background-color: #5b84a3;
-}
+
 #window,
 #workspaces {
     margin: 0 4px;
@@ -144,8 +141,8 @@ label:focus,
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: white;
+        color: black;
     }
 }
 
