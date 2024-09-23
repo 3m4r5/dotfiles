@@ -27,7 +27,7 @@
     background-color: transparent;
 }
 .module:hover {
-    background-color: #333333;
+    background-color: #515151;
 }
 #backlight-slider slider {
     min-height: 0px;
@@ -83,11 +83,12 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 30px #5b84a3;
+    box-shadow: inset 0 30px #515151;
 }
 
 #workspaces button {
     padding: 0 5px;
+    margin: 0 3px;
     background-color: transparent;
 }
 
@@ -98,6 +99,7 @@ button:hover {
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 #workspaces button.focused {
