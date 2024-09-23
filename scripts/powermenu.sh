@@ -17,11 +17,13 @@ host=`hostname`
 # logout=''
 # yes=''
 # no=''
+reload=''
+bios=''
 hibernate='󰋊'
 shutdown='⏻'
-reboot='⭮'
+reboot=''
 lock=''
-suspend='⏾'
+suspend='󰤄'
 logout=''
 yes=''
 no='X'
@@ -49,7 +51,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$suspend\n$logout\n$reload\n$hibernate\n$bios\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Execute Command
@@ -66,6 +68,12 @@ run_cmd() {
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			hyprctl dispatch exit
+		elif [[ $1 == '--hibernate' ]]; then
+			systemctl hibernate
+		elif [[ $1 == '--bios' ]]; then
+			systemctl reboot --firmware-setup
+		elif [[ $1 == '--reload' ]]; then
+			hyprctl reload
 		fi
 	else
 		exit 0
@@ -89,7 +97,14 @@ case ${chosen} in
 		fi
         ;;
 	$hibernate)
-		systemctl hibernate;;
+		run_cmd --hibernate
+		;;
+	$bios)
+		run_cmd --bios
+		;;
+	$reload)
+		run_cmd --reload
+		;;
     $suspend)
 		run_cmd --suspend
         ;;

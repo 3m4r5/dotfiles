@@ -8,39 +8,123 @@
     "reload_style_on_change": true,
     // Choose the order of the modules
     "modules-left": [
-        "custom/launcher",
-        "custom/keybinds",
-        "hyprland/workspaces",
+        "group/group-shortcuts",
+        "hyprland/workspaces"
         //"hyprland/mode",
         //"hyprland/scratchpad",
         // "wlr/taskbar",
+    ],
+    "modules-center": [
         "hyprland/window"
     ],
-    "modules-center": [],
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
+    },
     "modules-right": [
-        // "bluetooth",
-        // "mpd",
-        "custom/playerctl",
-        "custom/weather",
-        // "custom/emoji",
-        // "custom/clipboard",
-        //"idle_inhibitor",
-        //"power-profiles-daemon",
-        "disk",
-        "network",
-        "memory",
-        "cpu",
-        "temperature",
-        "hyprland/language",
-        "backlight",
-        "keyboard-state",
-        "pulseaudio",
-        "battery",
         "clock",
-        "tray",
-        //"custom/safecharging",
-        "custom/power"
+        "custom/weather",
+        "group/group-vitals",
+        "group/group-controls"
     ],
+    "group/group-vitals": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-vitals",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/vitals", // First element is the "group leader" and won't ever be hidden
+            "battery",
+            "disk",
+            "network",
+            // "bluetooth",
+            "memory",
+            "cpu",
+            "temperature",
+            "tray"
+        ]
+    },
+    "group/group-brightness": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-brightness",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "backlight",
+            "backlight/slider"
+        ]
+    },
+    "group/group-shortcuts": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-shortcuts",
+            "transition-left-to-right": true
+        },
+        "modules": [
+        "custom/shortcuts",
+        "custom/keybinds",
+        "custom/launcher",
+        "custom/emoji",
+        "custom/clipboard"
+        ]
+    },
+    "group/group-controls": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-vitals",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/controls", // First element is the "group leader" and won't ever be hidden
+            //"custom/safecharging",
+            // "keyboard-state",
+            "hyprland/language",
+            "pulseaudio",
+            "group/group-brightness",
+            //"idle_inhibitor",
+            // "power-profiles-daemon",
+            // "mpd",
+            "custom/playerctl",
+            "custom/power"
+        ]
+    },
+    "custom/vitals": {
+        "format": ""
+    },
+    "custom/shortcuts": {
+        "format": "" //󰣇
+    },
+    "custom/controls": {
+        "format": ""
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    // "custom/power": {
+    //     "format": "",
+    //     "tooltip": false,
+    //     "on-click": "shutdown now"
+    // },
     // Modules configuration
     "custom/keybinds": {
         "tooltip": true,
@@ -57,7 +141,7 @@
         "on-click": "activate"
     },
     "custom/launcher": {
-        "format": "",
+        "format": "󰀻",
         "tooltip": false,
         "on-click": "rofi -show drun -theme \"$HOME/.config/rofi/launchers/type-3/style-2.rasi\""
     },
@@ -77,11 +161,11 @@
     },
     "custom/emoji": {
         "format": "",
-        "on-click": ".config/scripts/emoji.sh"
+        "on-click": "rofimoji --selector-args=\"-theme ~/.config/rofi/launchers/type-3/style-2.rasi\" --hidden-descriptions --use-icons"
     },
     "custom/clipboard": {
-        "format": "",
-        "on-click": ".config/scripts/clipboard.sh",
+        "format": "",
+        "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
         "tooltip": true,
         "return-type": "txt",
         "interval": 10
@@ -159,14 +243,14 @@
             "playing": ""
         },
         "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        },
+        }
     },
     "tray": {
         // "icon-size": 21,
@@ -227,7 +311,7 @@
             "ThunderyShowers": "⛈",
             "ThunderySnowShowers": "⛈",
             "VeryCloudy": ""
-        },
+        }
     },
     "memory": {
         "format": "{}% ",
@@ -240,10 +324,10 @@
         // "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": [
-            "",
+            "",
             "",
-            ""
-        ],
+            ""
+        ]
         // "exec": "sensors | tr '\n' ' '"
     },
     "backlight": {
@@ -255,7 +339,7 @@
             "🌗",
             "🌖",
             "🌕"
-        ],
+        ]
     },
     "battery": {
         "states": {
@@ -276,7 +360,7 @@
             "",
             "",
             ""
-        ],
+        ]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -290,7 +374,7 @@
             "performance": "",
             "balanced": "",
             "power-saver": ""
-        },
+        }
     },
     // "network": {
     //     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -364,5 +448,5 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    },
+    }
 }

@@ -57,38 +57,6 @@ rm -f NerdFontsSymbolsOnly.zip LICENSE README.md
 # Apple Color Emoji: https://gist.github.com/win0err/9d8c7f0feabdfe8a4c9787b02c79ac51
 curl -LO https://github.com/samuelngs/apple-emoji-linux/releases/latest/download/AppleColorEmoji.ttf
 sudo sed -i -e 's/Noto Color/Apple Color Emoji<\/family><family>Noto Color/g' /etc/fonts/conf.d/60-generic.conf # TODO 45
-mkdir ~/.config/fontconfig/
-tee ~/.config/fontconfig/fonts.conf << FONTS
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-  <alias>
-    <family>serif</family>
-    <prefer>
-      <family>Symbols Nerd Font</family>
-      <family>Apple Color Emoji</family>
-    </prefer>
-  </alias>
-  <alias>
-    <family>sans-serif</family>
-    <prefer>
-      <family>Symbols Nerd Font</family>
-      <family>Apple Color Emoji</family>
-    </prefer>
-  </alias>
-  <alias>
-    <family>monospace</family>
-    <prefer>
-      <family>Symbols Nerd Font Mono</family>
-      <family>Apple Color Emoji</family>
-    </prefer>
-  </alias>
-  <match target="pattern">
-    <test qual="any" name="family"><string>Noto Color Emoji</string></test>
-    <edit name="family" mode="assign" binding="same"><string>Apple Color Emoji</string></edit>
-  </match>
-</fontconfig>
-FONTS
 
 rm -rf ~/.cache/fontconfig
 sudo fc-cache -r -v
@@ -99,7 +67,7 @@ echo "
 if [ -f ~/.config/.bash_aliases ]; then
 . ~/.config/.bash_aliases
 fi
-" >> .bashrc
+export GTK_THEME=Adwaita-dark" >> .bashrc
 
 : '
 todo:
@@ -119,8 +87,6 @@ hyprland:
 
 waybr: sensors module
 bar: display window icons in workspace module
-
-powermenu: add hibernate, reload, bios
 
 other:
 - hyprland, bar, bash, zsh, yazi, zellij, kitty, rofimoji config

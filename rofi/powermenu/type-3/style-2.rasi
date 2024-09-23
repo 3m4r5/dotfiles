@@ -18,12 +18,12 @@ configuration {
 
 * {
     /* Resolution : 1920x1080 */
-    box-spacing:                 50px;
-    box-margin:                  300px 200px;
+    box-spacing:                 80px;
+    box-margin:                  100px 200px;
     inputbar-spacing:            0px;
-    list-spacing:                30px;
+    list-spacing:                50px;
     general-padding:             20px;
-    element-padding:             80px 10px;
+    element-padding:             110px 10px;
     element-radius:              100%;
     general-radius:              100%;
     element-font:                "feather 64";
@@ -131,8 +131,8 @@ error-message {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     5;
-    lines:                       1;
+    columns:                     4;
+    lines:                       2;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;

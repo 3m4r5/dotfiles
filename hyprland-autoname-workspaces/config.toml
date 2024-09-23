@@ -72,6 +72,9 @@ imv = ""
 "(i?)Rust" = ""
 "(i?)Java" = ""
 "(i?)Teams" = "󰊻"
+"(i?)Codeforces" = "󱕍"
+"(i?)NeetCode" = "󱎯"
+"(i?)Codeberg" = ""
 
 [title_in_class.".*"]
 "(?i)Unlock Keyring" = ""
