@@ -165,7 +165,7 @@
     },
     "custom/clipboard": {
         "format": "",
-        "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
+        "on-click": "nwg-clipman",
         "tooltip": true,
         "return-type": "txt",
         "interval": 10

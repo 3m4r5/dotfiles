@@ -1,4 +1,4 @@
 @theme "~/.config/rofi/launchers/type-1/style-14.rasi"
 configuration {
-//modes: "window,drun,run,ssh,combi,keys,filebrowser,recursivebrowser,clipboard:cliphist list | rofi -dmenu | cliphist decode | wl-copy,emoji:rofimoji --selector-args="-theme ~/.config/rofi/launchers/type-3/style-2.rasi" --hidden-descriptions --use-icons";
+//modes: "drun,run,filebrowser,window,ssh,combi,keys,recursivebrowser,clipboard:cliphist list | rofi -dmenu | cliphist decode | wl-copy,emoji:rofimoji --selector-args="-theme ~/.config/rofi/launchers/type-3/style-2.rasi" --hidden-descriptions --use-icons";
 }

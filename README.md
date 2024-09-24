@@ -12,7 +12,9 @@
   - [rofi-wayland](https://github.com/lbonn/rofi)
   - [launcher & powermenu](https://github.com/adi1090x/rofi)
 - Emoji Picker: [Rofimoji](https://github.com/fdw/rofimoji)
-- Clipboard Manager: [cliphist](https://github.com/sentriz/cliphist)
+- Clipboard Manager:
+    - [cliphist](https://github.com/sentriz/cliphist)
+    - [nwg-clipman](https://github.com/nwg-piotr/nwg-clipman)
 - System Monitor: [Btop](https://github.com/aristocratos/btop)
 - Network Manager: [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
 - Bluetooth Manager: [Blueman](https://github.com/blueman-project/blueman)
