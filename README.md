@@ -20,5 +20,5 @@
 
 ### install
 ```sh
-curl -O https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh && sh install.sh
+sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh")
 ```
