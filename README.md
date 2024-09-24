@@ -8,15 +8,17 @@
 - File Manager: [Yazi](https://yazi-rs.github.io/)
 - Opener: [Junction](https://github.com/sonnyp/Junction)
 - Screenshot: [Flameshot](https://github.com/flameshot-org/flameshot)
-- Menu: [rofi-wayland](https://github.com/lbonn/rofi),
-[rofi theme](https://github.com/adi1090x/rofi)
+- Menus:
+  - [rofi-wayland](https://github.com/lbonn/rofi)
+  - [launcher & powermenu](https://github.com/adi1090x/rofi)
 - Emoji Picker: [Rofimoji](https://github.com/fdw/rofimoji)
 - Clipboard Manager: [cliphist](https://github.com/sentriz/cliphist)
 - System Monitor: [Btop](https://github.com/aristocratos/btop)
 - Network Manager: [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
 - Bluetooth Manager: [Blueman](https://github.com/blueman-project/blueman)
-- Fonts: [Nerd Fonts Symbols](https://www.nerdfonts.com/),
-[Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux)
+- Fonts:
+  - [Nerd Fonts Symbols](https://www.nerdfonts.com/)
+  - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux)
 
 ### install
 ```sh
