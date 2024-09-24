@@ -14,7 +14,7 @@ sudo dnf -y copr enable solopasha/hyprland
 
 # list installed packages: dnf repoquery --userinstalled
 #                 for vscode  V                 for junction and Zen V            for yazi V             V for btop
-sudo dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3-requests mpv firewall-applet imv
+sudo dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3-requests mpv firewall-applet imv nwg-clipman
 
 mkdir ~/.config
 mkdir ~/.local/bin
@@ -26,10 +26,6 @@ unzip yazi-x86_64-unknown-linux-gnu.zip
 rm -f yazi-x86_64-unknown-linux-gnu.zip yazi-x86_64-unknown-linux-gnu/README.md yazi-x86_64-unknown-linux-gnu/LICENSE
 mv yazi-x86_64-unknown-linux-gnu/* ~/.local/bin/
 rm -rf yazi-x86_64-unknown-linux-gnu
-
-# cliphist:
-curl -L https://github.com/sentriz/cliphist/releases/latest/download/v0.5.0-linux-amd64 -o ~/.local/bin/cliphist
-chmod +x ~/.local/bin/cliphist
 
 # config:
 cd ~
