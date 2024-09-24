@@ -10,13 +10,16 @@
 #waybar {
     color: white;
 }
-/* #tray .active {
-    color: white;
-    background-color: white;
+.horizontal {
+    background: linear-gradient(rgba(0, 0, 0, 0.258), transparent);
+    border-radius: 0;
 }
-#tray .active * {
-    background-color: black;
-} */
+.horizontal * {
+    background: initial;
+}
+#tray .active * *{
+    background-color: #252525;
+}
 
 .module {
     /* background-color: #72a8d1; */
