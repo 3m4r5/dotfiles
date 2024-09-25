@@ -15,7 +15,7 @@ client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
 
 [class]
 kitty = ""
-"org.mozilla.firefox" = ""
+"org.mozilla.firefox" = "󰈹"
 zen-alpha = "󰬡"
 "dev.zed.Zed" = ""
 DEFAULT = ""
@@ -29,6 +29,7 @@ imv = ""
 "firewall-config" = "󱨑"
 "flameshot" = ""
 "jetbrains.*" = ""
+"waybar.*" = ""
 
 [title_in_class.".*zen.*"]
 "(i?)GitLab" = ""

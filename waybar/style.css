@@ -16,11 +16,14 @@
 }
 .horizontal * {
     background: initial;
+    border-radius: 20px;
 }
 #tray .active * *{
     background-color: #252525;
 }
-
+.hosting-monitor * {
+    padding: 0 3px;
+}
 .module {
     /* background-color: #72a8d1; */
     padding: 0 8px;
