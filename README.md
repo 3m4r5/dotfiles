@@ -23,7 +23,7 @@
   - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux)
 
 ### installation
-run the following command after installing fedora:
+run the following command as root (`sudo -i`) after installing fedora:
 ```sh
-sudo sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh")
+sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh")
 ```
