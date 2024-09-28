@@ -3,11 +3,11 @@
     all: unset;
 } */
 * {
-    font-family: 'Noto Sans Mono', 'Font Awesome 6 Free', 'Font Awesome 6 Brands', monospace;
+    font-family: 'Noto Sans', 'Symbols Nerd Font Mono';
     font-size: 15px;
     border-radius: 20px;
 }
-#waybar {
+#waybar * {
     color: white;
 }
 .horizontal {
