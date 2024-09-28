@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
 
 # fix timezone:
-sudo timedatectl set-timezone Asia/Amman
+timedatectl set-timezone Asia/Amman
 
 # rpm fusion (for ffmpegthumbnailer):
-sudo dnf -y install \
+dnf -y install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf -y install \
+dnf -y install \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf -y copr enable solopasha/hyprland
+dnf -y copr enable solopasha/hyprland
 
 # list installed packages: dnf repoquery --userinstalled
 #                 for vscode  V                 for junction and Zen V            for yazi V             V for btop
-sudo dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3-requests mpv firewall-applet imv nwg-clipman
+dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3-requests mpv firewall-applet imv nwg-clipman
 
 mkdir ~/.config
 mkdir ~/.local/bin
@@ -52,10 +52,9 @@ rm -f NerdFontsSymbolsOnly.zip LICENSE README.md
 
 # Apple Color Emoji: https://gist.github.com/win0err/9d8c7f0feabdfe8a4c9787b02c79ac51
 curl -LO https://github.com/samuelngs/apple-emoji-linux/releases/latest/download/AppleColorEmoji.ttf
-sudo sed -i -e 's/Noto Color/Apple Color Emoji<\/family><family>Noto Color/g' /etc/fonts/conf.d/60-generic.conf # TODO 45
+sed -i -e 's/Noto Color/Apple Color Emoji<\/family><family>Noto Color/g' /etc/fonts/conf.d/60-generic.conf # TODO 45
 
 rm -rf ~/.cache/fontconfig
-sudo fc-cache -r -v
 fc-cache -f -v
 
 cd ~

@@ -25,5 +25,5 @@
 ### installation
 run the following command after installing fedora:
 ```sh
-sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh")
+sudo sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh")
 ```
