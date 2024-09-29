@@ -23,6 +23,7 @@
   - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux)
 
 ### installation
+run the following command in your home directory:
 ```sh
-curl -LO "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh" && sudo sh install.sh
+curl -O "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh" && sudo sh install.sh
 ```
