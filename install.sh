@@ -8,9 +8,7 @@ dnf -y copr enable solopasha/hyprland
 #                 for vscode  V                 for junction and Zen V            for yazi V             V for btop
 dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3 python3-requests mpv firewall-applet imv nwg-clipman
 
-mkdir .config/
-mkdir .local/
-mkdir .local/bin/
+mkdir .config/ .local/ .local/bin/
 
 # yazi:
 curl -LO https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.zip
@@ -28,8 +26,7 @@ chmod +x .config/scripts/*
 
 # flathub:
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak -y install flathub io.github.zen_browser.zen
-flatpak -y install flathub re.sonny.Junction
+flatpak -y install flathub io.github.zen_browser.zen flathub re.sonny.Junction
 xdg-settings set default-web-browser re.sonny.Junction.desktop
 xdg-mime default re.sonny.Junction.desktop x-scheme-handler/file
 xdg-mime default re.sonny.Junction.desktop inode/directory
