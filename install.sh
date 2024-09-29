@@ -47,7 +47,7 @@ curl -LO https://github.com/samuelngs/apple-emoji-linux/releases/latest/download
 sed -i -e 's/Noto Color/Apple Color Emoji<\/family><family>Noto Color/g' /etc/fonts/conf.d/60-generic.conf # TODO 45
 
 rm -rf .cache/fontconfig
-fc-cache -f -v
+fc-cache -f
 
 echo "
 if [ -f ~/.config/.bash_aliases ]; then
@@ -55,8 +55,7 @@ if [ -f ~/.config/.bash_aliases ]; then
 fi
 export GTK_THEME=Adwaita-dark" >> .bashrc
 
-: '
-todo:
+: ' TODO
 yazi:
 - cli
 - sudo mode
@@ -66,14 +65,11 @@ yazi:
 - gif/apng/heic preview and scroll
 - remote file manegment (google drive / waydroid)
 - external drives (flash)
-
 hyprland:
 - color picker/zoom/workspaces plugin
 - keybinds script
-
 waybr: sensors module
 bar: display window icons in workspace module
-
 other:
 - hyprland, bar, bash, zsh, yazi, zellij, kitty, rofimoji config
 - notifications
@@ -86,5 +82,4 @@ other:
 - add features from ubuntu sway
 - pywall theme switcher
 - dynamic wallpaper per workspace
-- manage with gnu stow / dotter & upload to github
-'
+- manage with gnu stow / dotter'
