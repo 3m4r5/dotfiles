@@ -31,9 +31,7 @@ cp dotfiles/.bash_aliases dotfiles/.gitignore ~/.config/
 rm -rf dotfiles
 chmod +x ~/.config/scripts/*
 
-# flathub:
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak -y install flathub io.github.zen_browser.zen flathub re.sonny.Junction
+# junction
 xdg-settings set default-web-browser re.sonny.Junction.desktop
 xdg-mime default re.sonny.Junction.desktop x-scheme-handler/file
 xdg-mime default re.sonny.Junction.desktop inode/directory
