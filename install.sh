@@ -8,7 +8,7 @@ dnf -y copr enable solopasha/hyprland
 #                 for vscode  V                 for junction and Zen V            for yazi V             V for btop
 dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3 python3-requests mpv firewall-applet imv nwg-clipman
 
-mkdir .config/ .local/ .local/bin/
+mkdir .config/ .local/ .local/bin/ .local/share/ .local/share/fonts/
 
 # yazi:
 curl -LO https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.zip
@@ -32,19 +32,16 @@ xdg-mime default re.sonny.Junction.desktop x-scheme-handler/file
 xdg-mime default re.sonny.Junction.desktop inode/directory
 
 # nerd fonts: (WIP)
-mkdir .local/share/fonts/
 cd .local/share/fonts/
 curl -LO https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip
 unzip NerdFontsSymbolsOnly.zip
 rm -f NerdFontsSymbolsOnly.zip LICENSE README.md
-cd -
-
 # Apple Color Emoji: https://gist.github.com/win0err/9d8c7f0feabdfe8a4c9787b02c79ac51
 curl -LO https://github.com/samuelngs/apple-emoji-linux/releases/latest/download/AppleColorEmoji.ttf
 sed -i -e 's/Noto Color/Apple Color Emoji<\/family><family>Noto Color/g' /etc/fonts/conf.d/60-generic.conf # TODO 45
-
 rm -rf .cache/fontconfig
 fc-cache -f
+cd -
 
 echo "
 if [ -f ~/.config/.bash_aliases ]; then
