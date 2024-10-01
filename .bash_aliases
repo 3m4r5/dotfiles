@@ -1,5 +1,6 @@
 alias mv='mv -n'
 alias lsa='ls -a'
+alias syazi='sudo .local/bin/yazi'
 
 alias dnfs='dnf search'
 alias dnfi='sudo dnf install'
