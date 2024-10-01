@@ -3,6 +3,7 @@
     font-family: 'Noto Sans', 'Symbols Nerd Font Mono';
     font-size: 15px;
     border-radius: 20px;
+    color: white;
 }
 tooltip {
     background-color: black;
