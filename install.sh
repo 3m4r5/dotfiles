@@ -51,6 +51,7 @@ export GTK_THEME=Adwaita-dark" >> .bashrc
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
 : ' TODO
+gtk: nm-applet zen
 yazi:
 - cli
 - sudo mode
