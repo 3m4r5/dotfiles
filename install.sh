@@ -8,7 +8,7 @@ dnf -y copr enable solopasha/hyprland
 #                 for vscode  V                 for junction and Zen V            for yazi V             V for btop
 dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3 python3-requests mpv firewall-applet imv nwg-clipman
 
-mkdir .config/ .local/ .local/bin/ .local/share/ .local/share/fonts/ .local/share/state/
+mkdir -p .config/ .local/bin/ .local/share/fonts/ .local/share/applications/
 
 # yazi:
 curl -LO https://github.com/sxyazi/yazi/releases/latest/download/yazi-x86_64-unknown-linux-gnu.zip
