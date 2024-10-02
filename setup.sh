@@ -76,7 +76,6 @@ other:
 - keycast: wlkeys/showmethekeys
 - on-screen keyboard
 - safe charging/prayer times/layout translator script(espanso?)
-- add features from ubuntu sway
 - pywall theme switcher
 - dynamic wallpaper per workspace
 - manage with gnu stow / dotter'
