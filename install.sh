@@ -9,4 +9,7 @@ dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot f
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 flatpak -y install flathub io.github.zen_browser.zen flathub re.sonny.Junction
 sed -i -e 's/Noto Color/Apple Color Emoji<\/family><family>Noto Color/g' /etc/fonts/conf.d/60-generic.conf # TODO 45
+mkdir -p /usr/share/themes/Adwaita-dark/gtk-3.0
+touch /usr/share/themes/Adwaita-dark/gtk-3.0/gtk.css
+echo '@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");' >> /usr/share/themes/Adwaita-dark/gtk-3.0/gtk.css
 rm -f install.sh

@@ -28,7 +28,7 @@ menu * {
 #window {
     background-color: transparent;
 }
-.module:hover {
+.module:hover, #tray > .active:hover {
     background-color: #515151;
 }
 #backlight-slider slider {
