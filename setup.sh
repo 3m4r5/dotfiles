@@ -53,9 +53,6 @@ if [ -f ~/.config/.bash_aliases ]; then
 fi
 export GTK_THEME=Adwaita-dark" >> ~/.bashrc
 : ' TODO
-gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
-gtk: nm-applet bluman-(manager/applet) zen
 yazi:
 - cli
 - sudo mode
