@@ -12,7 +12,7 @@
         "hyprland/workspaces"
         //"hyprland/mode",
         //"hyprland/scratchpad",
-        // "wlr/taskbar",
+        //"wlr/taskbar"
     ],
     "modules-center": [
         "hyprland/window"
@@ -142,7 +142,7 @@
     },
     "custom/launcher": {
         "format": "󰀻",
-        "tooltip": false,
+        "tooltip-format": "app launcher",
         "on-click": "rofi -show drun -theme \"$HOME/.config/rofi/launchers/type-3/style-2.rasi\""
     },
     "custom/safecharging": {
@@ -161,20 +161,20 @@
     },
     "custom/emoji": {
         "format": "",
+        "tooltip-format": "emoji picker",
         "on-click": "rofimoji --selector-args=\"-theme ~/.config/rofi/launchers/type-3/style-2.rasi\" --hidden-descriptions --use-icons"
     },
     "custom/clipboard": {
         "format": "",
+        "tooltip-format": "clipboard: {}",
         "on-click": "nwg-clipman",
-        "tooltip": true,
+        "exec":"echo $(wl-paste)",
         "return-type": "txt",
         "interval": 10
     },
     "hyprland/language": {
         "format": "{short} ",
-        "on-click": ".config/scripts/layoutswitcher.sh",
-        "on-scroll-up": ".config/scripts/layoutswitcher.sh -r",
-        "on-scroll-down": ".config/scripts/layoutswitcher.sh"
+        "on-click": "hyprctl devices | awk '/Keyboard at/ {getline; print}' | xargs -I{} hyprctl switchxkblayout {} next"
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -184,18 +184,6 @@
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1",
         "format": "{name}"
-        // https://fontawesome.com/search
-        // "format-icons": {
-        //     "1": "",//",
-        //     "2": "",//",
-        //     "3": "󰨞",//",
-        //     // "4": "",
-        //     // "5": "",
-        //     // "6": "",
-        //     "urgent": "",
-        //     "focused": ""
-        //     // "default": ""
-        // }
     },
     "keyboard-state": {
         "numlock": true,
