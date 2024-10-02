@@ -17,18 +17,28 @@
     "modules-center": [
         "hyprland/window"
     ],
-    "backlight/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal",
-        "device": "intel_backlight"
-    },
     "modules-right": [
         "clock",
         "custom/weather",
         "group/group-vitals",
         "group/group-controls"
     ],
+    // Groups
+    "group/group-shortcuts": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-shortcuts",
+            "transition-left-to-right": true
+        },
+        "modules": [
+        "custom/shortcuts",
+        "custom/keybinds",
+        "custom/launcher",
+        "custom/emoji",
+        "custom/clipboard"
+        ]
+    },
     "group/group-vitals": {
         "orientation": "inherit",
         "drawer": {
@@ -48,6 +58,27 @@
             "tray"
         ]
     },
+    "group/group-controls": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-controls",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/controls", // First element is the "group leader" and won't ever be hidden
+            //"custom/safecharging",
+            "keyboard-state",
+            "hyprland/language",
+            "pulseaudio",
+            "group/group-brightness",
+            //"idle_inhibitor",
+            // "power-profiles-daemon",
+            // "mpd",
+            "custom/playerctl",
+            "group/group-power"
+        ]
+    },
     "group/group-brightness": {
         "orientation": "inherit",
         "drawer": {
@@ -60,41 +91,26 @@
             "backlight/slider"
         ]
     },
-    "group/group-shortcuts": {
+    "group/group-power": {
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 500,
-            "children-class": "not-shortcuts",
-            "transition-left-to-right": true
-        },
-        "modules": [
-        "custom/shortcuts",
-        "custom/keybinds",
-        "custom/launcher",
-        "custom/emoji",
-        "custom/clipboard"
-        ]
-    },
-    "group/group-controls": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 500,
-            "children-class": "not-vitals",
+            "children-class": "not-power",
             "transition-left-to-right": false
         },
         "modules": [
-            "custom/controls", // First element is the "group leader" and won't ever be hidden
-            //"custom/safecharging",
-            // "keyboard-state",
-            "hyprland/language",
-            "pulseaudio",
-            "group/group-brightness",
-            //"idle_inhibitor",
-            // "power-profiles-daemon",
-            // "mpd",
-            "custom/playerctl",
-            "custom/power"
+            "custom/power",
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot"
         ]
+    },
+    // Modules configuration
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
     },
     "custom/vitals": {
         "format": ""
@@ -120,12 +136,6 @@
         "tooltip": false,
         "on-click": "reboot"
     },
-    // "custom/power": {
-    //     "format": "",
-    //     "tooltip": false,
-    //     "on-click": "shutdown now"
-    // },
-    // Modules configuration
     "custom/keybinds": {
         "tooltip": true,
         "interval": "once",
@@ -157,6 +167,7 @@
     "custom/power": {
         "format": "",
         "tooltip": false,
+        // "on-click": "shutdown now"
         "on-click": ".config/scripts/powermenu.sh"
     },
     "custom/emoji": {
@@ -170,7 +181,7 @@
         "on-click": "nwg-clipman",
         "exec":"echo $(wl-paste)",
         "return-type": "txt",
-        "interval": 10
+        "interval": 1
     },
     "hyprland/language": {
         "format": "{short} ",
