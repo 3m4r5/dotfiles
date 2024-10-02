@@ -1,4 +1,9 @@
-# Software Used (WIP):
+### installation
+```sh
+sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/setup.sh")
+```
+<details><summary>Software Used:</summary>
+
 - OS: [Fedora](https://fedoraproject.org/)
 - Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
 - WM: [Hyprland](https://hyprland.org/)
@@ -21,8 +26,4 @@
 - Fonts:
   - [Nerd Fonts Symbols](https://www.nerdfonts.com/)
   - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux)
-
-### installation
-```sh
-sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/setup.sh")
-```
+</details>
