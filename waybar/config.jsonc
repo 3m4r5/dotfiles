@@ -177,10 +177,10 @@
     },
     "custom/clipboard": {
         "format": "",
-        "tooltip-format": "clipboard: {}",
+        "tooltip-format": "{}",
         "on-click": "nwg-clipman",
-        "exec":"echo $(wl-paste)",
         "return-type": "txt",
+        "exec": ".config/scripts/clipboard.sh",
         "interval": 1
     },
     "hyprland/language": {

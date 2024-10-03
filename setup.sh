@@ -51,7 +51,7 @@ echo "
 if [ -f ~/.config/.bash_aliases ]; then
 . ~/.config/.bash_aliases
 fi
-export GTK_THEME=Adwaita-dark" >> ~/.bashrc
+[[ $(tty) == /dev/tty1 ]]&&exec Hyprland" >> ~/.bashrc
 : ' TODO
 yazi:
 - cli
