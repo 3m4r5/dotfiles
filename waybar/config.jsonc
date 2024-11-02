@@ -34,7 +34,7 @@
         "custom/day",
         "clock",
         "custom/weather",
-        "custom/prayertimes"
+        "custom/prayer"
         ]
     },
     "group/group-shortcuts": {
@@ -131,11 +131,11 @@
     "custom/day": {
         "format": "󰃭"
     },
-    "custom/prayertimes": {
+    "custom/prayer": {
         "format": "󱩷",
         "tooltip": true,
         "interval": "once",
-        "exec": ".config/scripts/prayerTimes.py",
+        "exec": ".config/scripts/prayer.py",
         "return-type": "json",
         "on-click": "xdg-open https://awqaf.gov.jo/ar/Pages/PrayerTime"
     },
