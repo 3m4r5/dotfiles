@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "position": "top", // Waybar position (top|bottom|left|right)
     "height": 20, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
@@ -18,12 +18,25 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "clock",
-        "custom/weather",
+        "group/group-day",
         "group/group-vitals",
         "group/group-controls"
     ],
     // Groups
+    "group/group-day": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-day",
+            "transition-left-to-right": false
+        },
+        "modules": [
+        "custom/day",
+        "clock",
+        "custom/weather",
+        "custom/prayertimes"
+        ]
+    },
     "group/group-shortcuts": {
         "orientation": "inherit",
         "drawer": {
@@ -68,15 +81,15 @@
         "modules": [
             "custom/controls", // First element is the "group leader" and won't ever be hidden
             //"custom/safecharging",
-            "keyboard-state",
-            "hyprland/language",
-            "pulseaudio",
+            // "keyboard-state",
+            "group/group-power",
             "group/group-brightness",
             //"idle_inhibitor",
             // "power-profiles-daemon",
             // "mpd",
-            "custom/playerctl",
-            "group/group-power"
+            "hyprland/language",
+            "pulseaudio",
+            "custom/playerctl"
         ]
     },
     "group/group-brightness": {
@@ -114,6 +127,17 @@
     },
     "custom/vitals": {
         "format": ""
+    },
+    "custom/day": {
+        "format": "󰃭"
+    },
+    "custom/prayertimes": {
+        "format": "󱩷",
+        "tooltip": true,
+        "interval": "once",
+        "exec": ".config/scripts/prayerTimes.py",
+        "return-type": "json",
+        "on-click": "xdg-open https://awqaf.gov.jo/ar/Pages/PrayerTime"
     },
     "custom/shortcuts": {
         "format": "" //󰣇
@@ -170,21 +194,22 @@
         // "on-click": "shutdown now"
         "on-click": ".config/scripts/powermenu.sh"
     },
-    "custom/emoji": {
-        "format": "",
-        "tooltip-format": "emoji picker",
-        "on-click": "rofimoji --selector-args=\"-theme ~/.config/rofi/launchers/type-3/style-2.rasi\" --hidden-descriptions --use-icons"
-    },
     "custom/clipboard": {
         "format": "",
         "tooltip-format": "{}",
         "on-click": "nwg-clipman",
         "return-type": "txt",
-        "exec": ".config/scripts/clipboard.sh",
+        "exec": "[ \"$(wl-paste)\" == \"\" ] && echo \"clipboard is empty\" || echo \"clipboard: $(wl-paste)\"",
         "interval": 1
     },
+    "custom/emoji": {
+        "format": "",
+        "tooltip-format": "emoji picker",
+        "on-click": "rofimoji --selector-args=\"-theme ~/.config/rofi/launchers/type-3/style-2.rasi\" --hidden-descriptions --use-icons"
+    },
     "hyprland/language": {
-        "format": "{short} ",
+        // "format": "{short} ",
+        "format": "{} ",
         "on-click": "hyprctl devices | awk '/Keyboard at/ {getline; print}' | xargs -I{} hyprctl switchxkblayout {} next"
     },
     "hyprland/workspaces": {
