@@ -24,10 +24,14 @@ rm -f yazi-x86_64-unknown-linux-gnu.zip yazi-x86_64-unknown-linux-gnu/README.md 
 mv yazi-x86_64-unknown-linux-gnu/* ~/.local/bin/
 rm -rf yazi-x86_64-unknown-linux-gnu
 
+# kanata:
+curl -L https://github.com/jtroo/kanata/releases/latest/download/kanata -o ~/.local/bin/kanata
+chmod +x ~/.local/bin/kanata
+
 # config:
 git clone https://github.com/3m4r5/dotfiles.git
 cp -r dotfiles/* ~/.config/
-cp dotfiles/.bash_aliases dotfiles/.gitignore ~/.config/
+cp dotfiles/.bash_aliases dotfiles/.gitignore dotfiles/kanata.kbd ~/.config/
 rm -rf dotfiles
 chmod +x ~/.config/scripts/*
 
@@ -48,11 +52,16 @@ fc-cache -f
 cd -
 
 echo "
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+
 if [ -f ~/.config/.bash_aliases ]; then
 . ~/.config/.bash_aliases
 fi
 [[ $(tty) == /dev/tty1 ]]&&exec Hyprland" >> ~/.bashrc
 : ' TODO
+add: nmcli nmtui dunst zathura hyprlock hyprpaper
+readme: imv mpv kanata
 yazi:
 - cli
 - sudo mode

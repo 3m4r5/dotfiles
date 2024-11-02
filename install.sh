@@ -1,7 +1,7 @@
 timedatectl set-timezone Asia/Amman # fix timezone
 dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm # rpm fusion (for ffmpegthumbnailer)
 dnf -y copr enable solopasha/hyprland
-#                 for vscode  V                 for junction and Zen V            for yazi V             V for btop (amd)
+#            for vscode  V                 for junction and Zen V            for yazi V             V for btop (amd)
 dnf install -y hyprland git micro btop polkit-gnome rofimoji flatpak flameshot ffmpegthumbnailer rocm-smi waybar kitty network-manager-applet blueman rofi-wayland hyprland-autoname-workspaces libglvnd-gles pavucontrol unzip python3 python3-requests mpv firewall-applet imv nwg-clipman
 # flathub:
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo

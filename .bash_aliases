@@ -2,6 +2,7 @@ alias mv='mv -n'
 alias lsa='ls -a'
 alias syazi='sudo .local/bin/yazi'
 alias debug-gtk='env GTK_DEBUG=interactive'
+alias bios='systemctl reboot --firmware-setup'
 
 alias dnfs='dnf search'
 alias dnfi='sudo dnf install'
