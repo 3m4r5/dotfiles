@@ -60,8 +60,7 @@ if [ -f ~/.config/.bash_aliases ]; then
 fi
 [[ $(tty) == /dev/tty1 ]]&&exec Hyprland" >> ~/.bashrc
 : ' TODO
-add: nmcli nmtui dunst zathura hyprlock hyprpaper
-readme: imv mpv kanata
+add: nmcli nmtui dunst hyprlock hyprpaper
 yazi:
 - cli
 - sudo mode

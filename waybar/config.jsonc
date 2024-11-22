@@ -84,11 +84,11 @@
             // "keyboard-state",
             "group/group-power",
             "group/group-brightness",
-            //"idle_inhibitor",
-            // "power-profiles-daemon",
             // "mpd",
             "hyprland/language",
             "pulseaudio",
+            "idle_inhibitor",
+            "power-profiles-daemon",
             "custom/playerctl"
         ]
     },
