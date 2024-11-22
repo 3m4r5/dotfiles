@@ -90,7 +90,6 @@ except (KeyError, Exception):
 
 weather = requests.get(f"https://wttr.in/{city}?format=j1").json()
 
-
 def format_time(time):
     return time.replace("00", "").zfill(2)
 

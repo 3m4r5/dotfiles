@@ -32,6 +32,8 @@ imv = ""
 "waybar" = ""
 "telegram" = ""
 "pcsx2" = "󰐔"
+"nm-applet" = "󰛵"
+"nm-connection-editor" = "󰤀"
 
 [title_in_class.".*zen.*"]
 "(i?)GitLab" = ""
