@@ -11,4 +11,5 @@ sed -i -e 's/Noto Color/Apple Color Emoji<\/family><family>Noto Color/g' /etc/fo
 mkdir -p /usr/share/themes/Adwaita-dark/gtk-3.0
 touch /usr/share/themes/Adwaita-dark/gtk-3.0/gtk.css
 echo '@import url("resource:///org/gtk/libgtk/theme/Adwaita/gtk-contained-dark.css");' >> /usr/share/themes/Adwaita-dark/gtk-3.0/gtk.css
+rm -f /usr/share/hypr/wall2.png
 rm -f install.sh
