@@ -57,8 +57,7 @@ bind 'TAB:menu-complete'
 
 if [ -f ~/.config/.bash_aliases ]; then
 . ~/.config/.bash_aliases
-fi
-[[ $(tty) == /dev/tty1 ]]&&exec Hyprland" >> ~/.bashrc
+fi" >> ~/.bashrc
 : ' TODO
 add: nmcli nmtui dunst hyprlock hyprpaper
 yazi:
