@@ -1,3 +1,5 @@
+> [!NOTE]
+> This repository is a work in progress and is only tested on 1920x1080p monitors.
 ### installation
 ```sh
 sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/setup.sh")
