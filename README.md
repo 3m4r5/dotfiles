@@ -32,4 +32,5 @@ sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/setup.sh")
 - Fonts:
   - [Nerd Fonts Symbols](https://www.nerdfonts.com/)
   - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux)
+  - [Noto Sans Arabic](https://fonts.google.com/noto/specimen/Noto+Sans+Arabic)
 </details>
