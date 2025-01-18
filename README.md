@@ -1,16 +1,15 @@
-> [!NOTE]
-> This repository is a work in progress and is only tested on 1920x1080p monitors.
 ### installation
 ```sh
 sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/setup.sh")
 ```
-<details><summary>Software Used:</summary>
+<details><summary>Software Used:</summary> <!--with [hyprexpo](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprexpo) plugin.-->
 
 - OS: [Fedora](https://fedoraproject.org/)
 - Terminal: [kitty](https://sw.kovidgoyal.net/kitty/)
 - WM: [Hyprland](https://hyprland.org/)
 - Authentication Agent: [hyprpolkitagent](https://wiki.hyprland.org/Hypr-Ecosystem/hyprpolkitagent/)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
+- Notification Manager: [SwayNotificationCenter](https://github.com/ErikReider/SwayNotificationCenter)
 - Browser: [Zen](https://zen-browser.app/)
 - File Manager: [Yazi](https://yazi-rs.github.io/)
 - Opener: [Junction](https://github.com/sonnyp/Junction)
@@ -32,5 +31,4 @@ sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/setup.sh")
 - Fonts:
   - [Nerd Fonts Symbols](https://www.nerdfonts.com/)
   - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux)
-  - [Noto Sans Arabic](https://fonts.google.com/noto/specimen/Noto+Sans+Arabic)
 </details>

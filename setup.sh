@@ -59,8 +59,9 @@ if [ -f ~/.config/.bash_aliases ]; then
 . ~/.config/.bash_aliases
 fi" >> ~/.bashrc
 : ' TODO
-add: nmcli nmtui dunst hyprlock hyprpaper
+add: wifi-driver kanata espanso nmtui hyprlock hyprpaper
 yazi:
+- git and relative line numbers plugins
 - cli
 - sudo mode
 - icons
@@ -76,7 +77,6 @@ waybr: sensors module
 bar: display window icons in workspace module
 other:
 - hyprland, bar, bash, zsh, yazi, zellij, kitty, rofimoji config
-- notifications
 - media controls
 - fix linear brightness
 - external monitor brightness & volume
