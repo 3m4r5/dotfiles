@@ -14,7 +14,7 @@ menu * {
     padding: 1px;
 }
 #waybar {
-    background: linear-gradient(rgba(0, 0, 0, 0.258), transparent);
+    background: linear-gradient(rgba(0, 0, 0, 0.8), transparent);
     border-radius: 0;
 }
 .hosting-monitor * {

@@ -12,6 +12,9 @@ alias dnfl='dnf list'
 alias dnfli='dnf list installed'
 alias dnfui='dnf repoquery --userinstalled'
 
+alias fpi='flatpak install'
+alias fpu='flatpak update'
+
 alias ishealthy='cat /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode'
 alias healthy1='echo 1 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode'
 alias healthy0='echo 0 | sudo tee /sys/bus/platform/drivers/ideapad_acpi/VPC2004:00/conservation_mode'

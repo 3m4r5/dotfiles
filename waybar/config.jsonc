@@ -31,10 +31,11 @@
             "transition-left-to-right": false
         },
         "modules": [
-        "custom/day",
+        // "custom/day",
         "clock",
         "custom/weather",
-        "custom/prayer"
+        "custom/prayer",
+        "custom/notification"
         ]
     },
     "group/group-shortcuts": {
@@ -49,7 +50,8 @@
         "custom/keybinds",
         "custom/launcher",
         "custom/emoji",
-        "custom/clipboard"
+        "custom/clipboard",
+        "custom/screenshot"
         ]
     },
     "group/group-vitals": {
@@ -60,15 +62,15 @@
             "transition-left-to-right": false
         },
         "modules": [
-            "custom/vitals", // First element is the "group leader" and won't ever be hidden
+            // "custom/vitals", // First element is the "group leader" and won't ever be hidden
+            "tray",
             "battery",
             "disk",
             "network",
             // "bluetooth",
             "memory",
             "cpu",
-            "temperature",
-            "tray"
+            "temperature"
         ]
     },
     "group/group-controls": {
@@ -119,6 +121,11 @@
         ]
     },
     // Modules configuration
+    "custom/screenshot": {
+        "format": "󰹑",
+        "tooltip-format": "screenshot",
+        "on-click": "env XDG_CURRENT_DESKTOP=sway flameshot gui"
+    },
     "backlight/slider": {
         "min": 0,
         "max": 100,
@@ -140,7 +147,8 @@
         "on-click": "xdg-open https://awqaf.gov.jo/ar/Pages/PrayerTime"
     },
     "custom/shortcuts": {
-        "format": "" //󰣇
+        "format": "", //󰣇
+        "on-click": "xdg-open https://github.com/3m4r5/dotfiles"
     },
     "custom/controls": {
         "format": ""
@@ -211,6 +219,26 @@
         // "format": "{short} ",
         "format": "{} ",
         "on-click": "hyprctl devices | awk '/Keyboard at/ {getline; print}' | xargs -I{} hyprctl switchxkblayout {} next"
+    },
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{} {icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
