@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/usr/include/c++/14/**"
+            ],
+            "defines": [],
+            "cppStandard": "c++23"
+        }
+    ],
+    "version": 4
+}
