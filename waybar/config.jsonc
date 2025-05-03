@@ -31,11 +31,11 @@
             "transition-left-to-right": false
         },
         "modules": [
-        // "custom/day",
-        "clock",
-        "custom/weather",
-        "custom/prayer",
-        "custom/notification"
+            // "custom/day",
+            "clock",
+            "custom/weather",
+            "custom/prayer",
+            "custom/notification"
         ]
     },
     "group/group-shortcuts": {
@@ -46,12 +46,12 @@
             "transition-left-to-right": true
         },
         "modules": [
-        "custom/shortcuts",
-        "custom/keybinds",
-        "custom/launcher",
-        "custom/emoji",
-        "custom/clipboard",
-        "custom/screenshot"
+            "custom/shortcuts",
+            "custom/keybinds",
+            "custom/launcher",
+            "custom/emoji",
+            "custom/clipboard",
+            "custom/screenshot"
         ]
     },
     "group/group-vitals": {
@@ -66,8 +66,8 @@
             "tray",
             "battery",
             "disk",
-            "network",
-            // "bluetooth",
+            // "network",
+            "bluetooth",
             "memory",
             "cpu",
             "temperature"
@@ -90,7 +90,7 @@
             "hyprland/language",
             "pulseaudio",
             "idle_inhibitor",
-            "power-profiles-daemon",
+            // "power-profiles-daemon",
             "custom/playerctl"
         ]
     },
