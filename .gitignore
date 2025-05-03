@@ -1,5 +1,4 @@
 /*
-!*/
 !.gitignore
 !.bash_aliases
 !README.md
@@ -13,6 +12,7 @@
 !hyprland-autoname-workspaces/
 !fontconfig/
 !gtk-3.0/
+!gtk-4.0/
 !rofi/
 !rofi/*/
 !rofi/*/*/

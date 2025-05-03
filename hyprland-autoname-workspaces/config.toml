@@ -1,5 +1,107 @@
 version = "1.1.15"
 
+[class]
+"dev.zed.Zed" = "󰬡"
+firewall = "󱨑"
+Code = "󰨞"
+blueman = ""
+DEFAULT = ""
+"vscodium.codium" = ""
+jetbrains = ""
+rustdesk = ""
+flameshot = "󰹑"
+"org.mozilla.firefox" = "󰈹"
+waybar = ""
+zen = "󰺕"
+telegram = ""
+kitty = ""
+Junction = "󰇐"
+mpv = ""
+pcsx2 = "󰐔"
+imv = ""
+nm-applet = "󰛵"
+"org.pulseaudio.pavucontrol" = ""
+nm-connection-editor = "󰤀"
+
+[class_active]
+
+[initial_class]
+
+[initial_class_active]
+
+[workspaces_name]
+
+[title_in_class.".*"]
+"(?i)Unlock Keyring" = ""
+
+[title_in_class.".*zen.*"]
+"Spring" = ""
+"freeCodeCamp" = ""
+"LinkedIn" = ""
+"Rust" = ""
+"YouTube" = "󰗃"
+"Codeforces" = "󱕍"
+"Codeberg" = ""
+"Debian" = "󰣚"
+"Ubuntu" = ""
+"HackerRank" = ""
+"Search" = ""
+"GitHub" = ""
+"Bitwarden" = "󰞀"
+"Discord" = ""
+"Stack Exchange" = ""
+"CodePen" = ""
+"AWS" = ""
+"Python" = ""
+"GNU" = ""
+"Mastodon" = "󰫑"
+"Hyprland" = ""
+"Wikipedia" = ""
+"GitLab" = ""
+"Reddit" = ""
+"Font Awesome" = "󰀺"
+"Drive" = ""
+"Product Hunt" = ""
+"WhatsApp" = "󰖣"
+"Azure" = ""
+"DEV" = ""
+"Figma" = ""
+"Fedora" = ""
+"React" = ""
+"Teams" = "󰊻"
+"Stack Overflow" = ""
+"Hacker News" = ""
+"Steam" = "󰓓"
+"Java" = ""
+"NeetCode" = "󱎯"
+"npm" = ""
+"Arch" = "󰣇"
+"Telegram" = ""
+"Flathub" = ""
+"Medium" = ""
+
+[title_in_class.".*kitty.*"]
+"(?i)Yazi" = ""
+"(?i)btop" = "🅱"
+"(?i)micro" = "μ"
+
+[title_in_class_active]
+
+[title_in_initial_class]
+
+[title_in_initial_class_active]
+
+[initial_title_in_class]
+
+[initial_title_in_class_active]
+
+[initial_title_in_initial_class]
+
+[initial_title_in_initial_class_active]
+
+[exclude]
+"" = "^$"
+
 [format]
 dedup = true
 dedup_inactive_fullscreen = false
@@ -12,81 +114,3 @@ client_active = "<b>{icon}</b>"
 client_dup = "{icon}{counter_sup}{delim}"
 client_dup_active = "*{icon}*{delim}{icon}{counter_unfocused_sup}"
 client_dup_fullscreen = "[{icon}]{delim}{icon}{counter_unfocused_sup}"
-
-[class]
-kitty = ""
-"org.mozilla.firefox" = "󰈹"
-zen-beta = "󰺕"
-"dev.zed.Zed" = "󰬡"
-DEFAULT = ""
-Code = "󰨞"
-mpv = ""
-imv = ""
-"Junction" = "󰇐"
-"blueman" = ""
-"org.pulseaudio.pavucontrol" = ""
-"vscodium.codium" = ""
-"firewall" = "󱨑"
-"flameshot" = "󰹑"
-"jetbrains" = "" # 
-"waybar" = ""
-"telegram" = ""
-"pcsx2" = "󰐔"
-"nm-applet" = "󰛵"
-"nm-connection-editor" = "󰤀"
-
-[title_in_class.".*zen.*"]
-"(i?)GitLab" = ""
-"(i?)Reddit" = ""
-"(i?)HackerRank" = ""
-"(i?)Search" = ""
-"(i?)GitHub" = ""
-"(i?)Bitwarden" = "󰞀"
-"(i?)Telegram" = ""
-"(i?)LinkedIn" = ""
-"(i?)YouTube" = "󰗃"
-"(i?)Drive" = ""
-"(i?)Hyprland" = ""
-"(i?)Ubuntu" = ""
-"(i?)Wikipedia" = ""
-"(i?)Arch" = "󰣇"
-"(i?)Medium" = ""
-"(i?)Hacker News" = ""
-"(i?)Stack Overflow" = ""
-"(i?)Discord" = ""
-"(i?)Flathub" = ""
-"(i?)Stack Exchange" = ""
-"(i?)Font Awesome" = "󰀺"
-"(i?)DEV" = ""
-"(i?)npm" = ""
-"(i?)Python" = ""
-"(i?)Steam" = "󰓓"
-"(i?)WhatsApp" = "󰖣"
-"(i?)CodePen" = ""
-"(i?)freeCodeCamp" = ""
-"(i?)Figma" = ""
-"(i?)Product Hunt" = ""
-"(i?)Mastodon" = "󰫑"
-"(i?)Debian" = "󰣚"
-"(i?)Fedora" = ""
-"(i?)GNU" = ""
-"(i?)AWS" = ""
-"(i?)Azure" = ""
-"(i?)React" = ""
-"(i?)Spring" = ""
-"(i?)Rust" = ""
-"(i?)Java" = ""
-"(i?)Teams" = "󰊻"
-"(i?)Codeforces" = "󱕍"
-"(i?)NeetCode" = "󱎯"
-"(i?)Codeberg" = ""
-
-[title_in_class.".*"]
-"(?i)Unlock Keyring" = ""
-
-[title_in_class.".*kitty.*"]
-"(?i)Yazi" = ""
-"(?i)micro" = "μ"
-
-[exclude]
-"" = "^$"
