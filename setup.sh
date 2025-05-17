@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-
-curl -O "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh" && sudo sh install.sh
+sudo sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh")
 
 mkdir -p ~/.config/ ~/.local/bin/ ~/.local/share/fonts/ ~/.local/share/applications/
 touch ~/.local/share/applications/micro.desktop ~/.local/share/applications/unzip.desktop
@@ -58,31 +57,5 @@ bind 'TAB:menu-complete'
 if [ -f ~/.config/.bash_aliases ]; then
 . ~/.config/.bash_aliases
 fi" >> ~/.bashrc
-: ' TODO
-add: wifi-driver kanata espanso nmtui hyprlock hyprpaper
-yazi:
-- git and relative line numbers plugins
-- cli
-- sudo mode
-- icons
-- md/html rendering
-- relative line numbers
-- gif/apng/heic preview and scroll
-- remote file manegment (google drive / waydroid)
-- external drives (flash)
-hyprland:
-- color picker/zoom/workspaces plugin
-- keybinds script
-waybr: sensors module
-bar: display window icons in workspace module
-other:
-- hyprland, bar, bash, zsh, yazi, zellij, kitty, rofimoji config
-- media controls
-- fix linear brightness
-- external monitor brightness & volume
-- keycast: wlkeys/showmethekeys
-- on-screen keyboard
-- safe charging/prayer times/layout translator script(espanso?)
-- pywall theme switcher
-- dynamic wallpaper per workspace
-- manage with gnu stow / dotter'
+
+pip install requests beautifulsoup4

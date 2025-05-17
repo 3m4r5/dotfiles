@@ -9,18 +9,32 @@
     // Choose the order of the modules
     "modules-left": [
         "group/group-shortcuts",
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "wlr/taskbar",
+        "hyprland/window"
         //"hyprland/mode",
         //"hyprland/scratchpad",
-        //"wlr/taskbar"
     ],
-    "modules-center": [
-        "hyprland/window"
-    ],
+    // "modules-center": [
+    //     // "hyprland/window"
+    // ],
     "modules-right": [
-        "group/group-day",
-        "group/group-vitals",
-        "group/group-controls"
+        // "group/group-day",
+        // "group/group-info",
+        // "group/group-controls"
+        "custom/weather",
+        "custom/prayer",
+        "clock",
+        "bluetooth",
+        "group/group-brightness",
+        "mpd",
+        "hyprland/language",
+        "pulseaudio",
+        "custom/playerctl",
+        "custom/media",
+        "custom/notification",
+        "tray",
+        "group/group-vitals"
     ],
     // Groups
     "group/group-day": {
@@ -51,7 +65,28 @@
             "custom/launcher",
             "custom/emoji",
             "custom/clipboard",
-            "custom/screenshot"
+            "custom/screenshot",
+            "idle_inhibitor",
+            "power-profiles-daemon",
+            "group/group-power"
+        ]
+    },
+    "group/group-info": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-info",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            // "custom/vitals", // First element is the "group leader" and won't ever be hidden
+            "tray",
+            "battery",
+            "custom/safecharging",
+            "disk",
+            "group/group-vitals",
+            "bluetooth"
+            // "network",
         ]
     },
     "group/group-vitals": {
@@ -62,12 +97,10 @@
             "transition-left-to-right": false
         },
         "modules": [
-            // "custom/vitals", // First element is the "group leader" and won't ever be hidden
-            "tray",
+            "custom/vitals", // First element is the "group leader" and won't ever be hidden
             "battery",
+            "custom/safecharging",
             "disk",
-            // "network",
-            "bluetooth",
             "memory",
             "cpu",
             "temperature"
@@ -82,16 +115,16 @@
         },
         "modules": [
             "custom/controls", // First element is the "group leader" and won't ever be hidden
-            //"custom/safecharging",
             // "keyboard-state",
             "group/group-power",
             "group/group-brightness",
-            // "mpd",
+            "mpd",
             "hyprland/language",
             "pulseaudio",
             "idle_inhibitor",
-            // "power-profiles-daemon",
-            "custom/playerctl"
+            "power-profiles-daemon",
+            "custom/playerctl",
+            "custom/media"
         ]
     },
     "group/group-brightness": {
@@ -111,7 +144,7 @@
         "drawer": {
             "transition-duration": 500,
             "children-class": "not-power",
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },
         "modules": [
             "custom/power",
@@ -121,6 +154,9 @@
         ]
     },
     // Modules configuration
+    "hyprland/window": {
+        "separate-outputs": true
+    },
     "custom/screenshot": {
         "format": "󰹑",
         "tooltip-format": "screenshot",
@@ -132,16 +168,12 @@
         "orientation": "horizontal",
         "device": "intel_backlight"
     },
-    "custom/vitals": {
-        "format": ""
-    },
-    "custom/day": {
-        "format": "󰃭"
-    },
+    "custom/vitals": { "format": "" },
+    "custom/day": { "format": "󰃭" },
     "custom/prayer": {
-        "format": "󱩷",
+        "format": "{} 󱩷",
         "tooltip": true,
-        "interval": "once",
+        "interval": 3600,
         "exec": ".config/scripts/prayer.py",
         "return-type": "json",
         "on-click": "xdg-open https://awqaf.gov.jo/ar/Pages/PrayerTime"
@@ -150,9 +182,7 @@
         "format": "", //󰣇
         "on-click": "xdg-open https://github.com/3m4r5/dotfiles"
     },
-    "custom/controls": {
-        "format": ""
-    },
+    "custom/controls": { "format": "" },
     "custom/quit": {
         "format": "󰗼",
         "tooltip": false,
@@ -190,7 +220,9 @@
     "custom/safecharging": {
         "format": "🔋{icon}",
         "tooltip": true,
-        "on-click": ".config/scripts/safecharging.sh",
+        "on-click": ".config/scripts/safecharging.sh -t",
+        "return-type": "json",
+        "exec": ".config/scripts/safecharging.sh -s",
         "format-icons": {
             "on": "🔒",
             "off": "🔓"
@@ -216,8 +248,8 @@
         "on-click": "rofimoji --selector-args=\"-theme ~/.config/rofi/launchers/type-3/style-2.rasi\" --hidden-descriptions --use-icons"
     },
     "hyprland/language": {
-        // "format": "{short} ",
-        "format": "{} ",
+        "format": "{short} ",
+        // "format": "{} ",
         "on-click": "hyprctl devices | awk '/Keyboard at/ {getline; print}' | xargs -I{} hyprctl switchxkblayout {} next"
     },
     "custom/notification": {
@@ -244,10 +276,10 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        // "format": "{icon}",
+        "format": "{icon}",
         "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
-        "format": "{name}"
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+        // "format": "{name}"
     },
     "keyboard-state": {
         "numlock": true,
@@ -405,7 +437,6 @@
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": [
             "",
             "",
@@ -428,16 +459,16 @@
             "power-saver": ""
         }
     },
-    // "network": {
-    //     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    //     "format-wifi": "{essid} ({signalStrength}%) ",
-    //     "format-ethernet": "{ipaddr}/{cidr} ",
-    //     "tooltip-format": "{ifname} via {gwaddr} ",
-    //     "format-linked": "{ifname} (No IP) ",
-    //     "format-disconnected": "Disconnected ⚠",
-    //     "format-alt": "{ifname}: {ipaddr}/{cidr}",
-    //     "on-click": "nm-applet"
-    // },
+    /* "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "nm-applet"
+    }, */
     "network": {
         // https://gitlab.com/stephan-raabe/dotfiles/-/blob/main/waybar/modules.json
         "format": "{ifname}",
@@ -481,14 +512,55 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
+            "default": [ "", "", "" ]
         },
         "on-click": "pavucontrol"
     },
+    // "pulseaudio#input": {
+    //     "format-source": " {volume}%",
+    //     "format-source-muted": " off",
+    //     "format": "{format_source}",
+    //     "scroll-step": 1,
+    //     "smooth-scrolling-threshold": 1,
+    //     "max-volume": 100,
+    //     "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    //     "on-click-middle": "pavucontrol",
+    //     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+    //     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+    // },
+    // "pulseaudio#output": {
+    //     "format": "{icon} {volume}%",
+    //     "format-muted": " off",
+    //     "format-icons": {
+    //         "default": ["", "", ""]
+    //     },
+    //     "max-volume": 100,
+    //     "scroll-step": 2,
+    //     "smooth-scrolling-threshold": 1,
+    //     "on-click": "pavucontrol",
+    //     "on-click-middle": "pavucontrol",
+    // },
+    //  "pulseaudio#input": {
+    //     "format-source": " {volume}%",
+    //     "format-source-muted": " off",
+    //     "format": "{format_source}",
+    //     "scroll-step": 1,
+    //     "smooth-scrolling-threshold": 1,
+    //     "on-click": "amixer sset 'Capture' toggle",
+    //     "on-click-middle": "pavucontrol",
+    //     "on-scroll-up": "amixer sset 'Capture' 2%+",
+    //     "on-scroll-down": "amixer sset 'Capture' 2%-"
+    // },
+    // "pulseaudio#output": {
+    //     "format": "{icon} {volume}%",
+    //     "format-muted": " off",
+    //     "format-icons": { "default": ["", "", ""] },
+    //     "max-volume": 153,
+    //     "scroll-step": 2,
+    //     "smooth-scrolling-threshold": 1,
+    //     "on-click": "amixer sset 'Master' toggle",
+    //     "on-click-middle": "pavucontrol"
+    // }, 
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
