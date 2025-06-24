@@ -82,9 +82,10 @@ nm-connection-editor = "󰤀"
 "Medium" = ""
 
 [title_in_class.".*kitty.*"]
-"(?i)Yazi" = ""
-"(?i)btop" = "🅱"
-"(?i)micro" = "μ"
+"Yazi" = ""
+"btop" = "🅱"
+"micro" = "μ"
+"vi" = ""
 
 [title_in_class_active]
 
