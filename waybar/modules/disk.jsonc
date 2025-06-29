@@ -1,0 +1,8 @@
+{
+    "disk": {
+        "interval": 600, // refresh every 10 minutes
+        "format": "{percentage_used}% ",
+        "path": "/",
+        "on-click": "alacritty -e htop"
+    }
+}

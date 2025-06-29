@@ -1,0 +1,6 @@
+{
+    "memory": {
+        "format": "{}% ",
+        "on-click": "kitty btop"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "group/day": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-day",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "clock",
+            "custom/weather",
+            "custom/prayer"
+        ]
+    }
+}

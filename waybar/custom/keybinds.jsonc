@@ -1,0 +1,10 @@
+{
+    "custom/keybinds": {
+        "tooltip": true,
+        "interval": "once",
+        "format": "",
+        "exec": ".config/scripts/keybinds.py",
+        "return-type": "json",
+        "on-click": "$EDITOR .config/hypr/keybinds.conf"
+    }
+}

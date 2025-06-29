@@ -1,0 +1,20 @@
+{
+    "group/vitals": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-vitals",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/notification",
+            "disk",
+            "custom/gpu",
+            "memory",
+            "cpu",
+            "temperature",
+            "battery",
+            "network"
+        ]
+    }
+}

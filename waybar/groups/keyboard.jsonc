@@ -1,0 +1,15 @@
+{
+    "group/keyboard": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-keyboard",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "hyprland/language#short",
+            "hyprland/language",
+            "hyprland/submap"
+        ]
+    }
+}

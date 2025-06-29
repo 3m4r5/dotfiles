@@ -1,0 +1,10 @@
+{
+    "custom/clipboard": {
+        "format": "",
+        "tooltip-format": "{}",
+        "on-click": "nwg-clipman",
+        "return-type": "txt",
+        "exec": "[ \"$(wl-paste)\" == \"\" ] && echo \"clipboard is empty\" || echo \"clipboard: $(wl-paste)\"",
+        "interval": 10
+    }
+}

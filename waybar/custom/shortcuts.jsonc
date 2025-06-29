@@ -1,0 +1,6 @@
+{
+    "custom/shortcuts": {
+        "format": "", //󰣇
+        "on-click": "xdg-open https://github.com/3m4r5/dotfiles"
+    }
+}

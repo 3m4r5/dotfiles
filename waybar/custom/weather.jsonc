@@ -1,0 +1,31 @@
+{
+    "custom/weather": {
+        "icon-size": 42,
+        "format": "{text} {icon}",
+        "tooltip": true,
+        "interval": 3600,
+        "exec": ".config/scripts/weather.py",
+        "return-type": "json",
+        "format-icons": {
+            "Unknown": "✨",
+            "Cloudy": "",
+            "Fog": "🌫",
+            "HeavyRain": "🌧",
+            "HeavyShowers": "🌧",
+            "HeavySnow": "❄️",
+            "HeavySnowShowers": "❄️",
+            "LightRain": "🌦",
+            "LightShowers": "🌦",
+            "LightSleet": "🌧",
+            "LightSleetShowers": "🌧",
+            "LightSnow": "🌨",
+            "LightSnowShowers": "🌨",
+            "PartlyCloudy": "⛅️",
+            "Sunny": "☀️",
+            "ThunderyHeavyRain": "🌩",
+            "ThunderyShowers": "⛈",
+            "ThunderySnowShowers": "⛈",
+            "VeryCloudy": ""
+        }
+    }
+}

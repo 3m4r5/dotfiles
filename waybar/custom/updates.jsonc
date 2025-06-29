@@ -1,0 +1,16 @@
+{
+    "custom/updates": {
+        "exec": "~/.config/scripts/checkupdates.sh",
+        "on-click": "pkexec dnf update -y",
+        "on-click-right": "~/.config/scripts/checkupdates.sh",
+        "on-click-middle": "swaymsg exec '$term -e sudo dnf update --refresh'",
+        "interval": 2, // refresh every 15 minutes
+        "return-type": "json",
+        "format": "{icon}",
+        "format-alt": "{icon} {text}",
+        "format-icons": {
+            "has-updates": "", // icon when updates needed
+            "updated": "" // icon when all packages updated
+        }
+    }
+}

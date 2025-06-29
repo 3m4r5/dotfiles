@@ -1,15 +1,17 @@
-/*
+*
 !.gitignore
 !.bash_aliases
 !README.md
 !install.sh
 !setup.sh
 !kanata.kbd
-*/
+
 !hypr/
 !hypr/*
 !hypr/*/*
 !waybar/
+!waybar/*
+!waybar/*/*
 !yazi/
 !hyprland-autoname-workspaces/
 !fontconfig/
@@ -23,4 +25,4 @@
 !VSCodium/*/
 !VSCodium/*/*/
 !scripts/
-!scripts/*/
+!scripts/*
