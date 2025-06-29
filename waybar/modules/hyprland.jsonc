@@ -1,0 +1,33 @@
+{
+    "hyprland/window": { "separate-outputs": true },
+    "hyprland/submap": {
+        "always-on": true,
+        "default-submap": "main",
+        "format": "submap: {}"
+    },
+    "hyprland/language": {
+        "format": "layout: {}",
+        "on-click": "hyprctl devices | awk '/Keyboard at/ {getline; print}' | xargs -I{} hyprctl switchxkblayout {} next"
+    },
+    "hyprland/language#short": {
+        "format": "{short} ",
+        "on-click": "hyprctl devices | awk '/Keyboard at/ {getline; print}' | xargs -I{} hyprctl switchxkblayout {} next"
+    },
+    "hyprland/workspaces": {
+        // "disable-scroll": true,
+        // "all-outputs": true,
+        // "warp-on-scroll": false,
+        // "on-scroll-up": "hyprctl dispatch workspace e-1",
+        // "on-scroll-down": "hyprctl dispatch workspace e+1",
+        // "format": "{icon}",
+        // "format": "{name}"
+        "format": "{icon}: {windows}",
+        "format-window-separator": "",
+        "workspace-taskbar": {
+            "enable": true,
+            "update-active-window": true,
+            "format": "{icon}"
+            // "format": "{icon} {title:.20}"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "group/shortcuts": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-shortcuts",
+            "transition-left-to-right": true
+        },
+        "modules": [
+            "custom/shortcuts",
+            "custom/keybinds",
+            "custom/launcher",
+            "custom/emoji",
+            "custom/clipboard",
+            "custom/screenshot",
+            "idle_inhibitor",
+            "power-profiles-daemon",
+            "custom/safecharging",
+            "group/power"
+        ]
+    }
+}

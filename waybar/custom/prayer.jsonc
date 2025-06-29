@@ -1,0 +1,10 @@
+{
+    "custom/prayer": {
+        "format": "{} 󱩷",
+        "tooltip": true,
+        "interval": 60,
+        "exec": ".config/scripts/prayer.py",
+        "return-type": "json",
+        "on-click": "xdg-open https://awqaf.gov.jo/ar/Pages/PrayerTime"
+    }
+}

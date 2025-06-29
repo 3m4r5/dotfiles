@@ -1,0 +1,23 @@
+{
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        // "on-click": "shutdown now"
+        "on-click": ".config/scripts/powermenu.sh"
+    },
+    "custom/quit": {
+        "format": "󰗼",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "󰍁",
+        "tooltip": false,
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": "󰜉",
+        "tooltip": false,
+        "on-click": "reboot"
+    }
+}

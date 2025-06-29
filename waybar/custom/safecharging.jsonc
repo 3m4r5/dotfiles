@@ -1,0 +1,13 @@
+{
+    "custom/safecharging": {
+        "format": "{icon}",
+        "tooltip": true,
+        "on-click": ".config/scripts/safecharging.sh -t",
+        "return-type": "json",
+        "exec": ".config/scripts/safecharging.sh -s",
+        "format-icons": {
+            "on": "󱞜",
+            "off": "󱞝"
+        }
+    }
+}

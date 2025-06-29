@@ -1,0 +1,7 @@
+{
+    "custom/screenshot": {
+        "format": "󰹑",
+        "tooltip-format": "screenshot",
+        "on-click": "env XDG_CURRENT_DESKTOP=sway flameshot gui"
+    }
+}

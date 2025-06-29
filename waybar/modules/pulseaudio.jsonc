@@ -1,0 +1,49 @@
+{
+"pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [ "", "", "" ]
+        },
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio#input": {
+        "format-source": " {volume}%",
+        "format-source-muted": " off",
+        "format": "{format_source}",
+        "scroll-step": 1,
+        "smooth-scrolling-threshold": 1,
+        "max-volume": 100,
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-middle": "pavucontrol",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+        // "on-click": "amixer sset 'Capture' toggle",
+        // "on-scroll-up": "amixer sset 'Capture' 2%+",
+        // "on-scroll-down": "amixer sset 'Capture' 2%-"
+    },
+    "pulseaudio#output": {
+        "format": "{icon} {volume}%",
+        "format-muted": " off",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "max-volume": 100,
+        "scroll-step": 2,
+        "smooth-scrolling-threshold": 1,
+        "on-click": "pavucontrol",
+        // "on-click": "amixer sset 'Master' toggle",
+        "on-click-middle": "pavucontrol"
+    }
+}
