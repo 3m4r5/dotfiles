@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 timedatectl set-timezone Asia/Amman # fix timezone
 dnf -y install "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" # rpm fusion (for ffmpegthumbnailer)
 dnf -y copr enable solopasha/hyprland
