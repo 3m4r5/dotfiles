@@ -1,6 +1,6 @@
 ### installation
 ```sh
-sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/setup.sh")
+sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/refs/heads/test/setup.sh")
 ```
 <details><summary>Software Used:</summary> <!--with [hyprexpo](https://github.com/hyprwm/hyprland-plugins/tree/main/hyprexpo) plugin.-->
 
