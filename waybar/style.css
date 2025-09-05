@@ -95,16 +95,12 @@ button:hover {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
-#workspaces button.focused {
+#workspaces button.focused, #mode {
     background-color: #64727D;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 #workspaces button.urgent {
     background-color: #eb4d4b;
-}
-#mode {
-    background-color: #64727D;
-    /* box-shadow: inset 0 -3px #ffffff; */
 }
 #language {
     min-width: 44px;
@@ -171,7 +167,6 @@ button:hover {
     background-color: #f53c3c;
 }
 #keyboard-state {
-    padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
 }
@@ -187,7 +182,7 @@ button:hover {
 #scratchpad.empty {
 	background-color: transparent;
 }
-#privacy {
+#privacy, #keyboard-state {
     padding: 0;
 }
 #privacy-item {
