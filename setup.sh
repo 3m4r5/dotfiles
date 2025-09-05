@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-curl -O "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh" && sudo sh install.sh
+curl -O "https://raw.githubusercontent.com/3m4r5/dotfiles/refs/heads/test/install.sh" && sudo sh install.sh
 
 mkdir -p ~/.config/ ~/.local/bin/ ~/.local/share/fonts/ ~/.local/share/applications/
 touch ~/.local/share/applications/micro.desktop ~/.local/share/applications/unzip.desktop
