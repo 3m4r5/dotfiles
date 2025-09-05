@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/refs/heads/test/install.sh")
+sudo sh <(curl -s "https://raw.githubusercontent.com/3m4r5/dotfiles/main/install.sh")
 
 mkdir -p ~/.config/ ~/.local/bin/ ~/.local/share/fonts/ ~/.local/share/applications/
 touch ~/.local/share/applications/micro.desktop ~/.local/share/applications/unzip.desktop
