@@ -9,6 +9,7 @@
         "modules": [
             "hyprland/language#short",
             "hyprland/language",
+            "sway/language",
             "hyprland/submap"
         ]
     }

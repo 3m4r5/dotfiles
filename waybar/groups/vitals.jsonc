@@ -13,8 +13,8 @@
             "memory",
             "cpu",
             "temperature",
-            "battery",
-            "network"
+            "network",
+            "battery"
         ]
     }
 }
