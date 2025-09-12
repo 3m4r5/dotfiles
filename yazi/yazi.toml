@@ -2,7 +2,7 @@
 
 [opener]
 open = [
-	{ run = 'flatpak run re.sonny.Junction "$@"', orphan = true },
+	{ run = 're.sonny.Junction "$@"', orphan = true },
 ]
 
 [open]

@@ -13,7 +13,6 @@
 !waybar/*
 !waybar/*/*
 !yazi/
-!hyprland-autoname-workspaces/
 !fontconfig/
 !gtk-3.0/
 !gtk-4.0/
