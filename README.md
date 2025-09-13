@@ -16,14 +16,15 @@
 - Emoji Picker: [Rofimoji](https://github.com/fdw/rofimoji)
 - Clipboard Manager: [cliphist](https://github.com/sentriz/cliphist)
 <!-- - System Monitor: [Btop](https://github.com/aristocratos/btop) -->
-<!-- - Network Manager: [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) -->
+- Network: [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet)
 <!-- - Bluetooth Manager: [Blueman](https://github.com/blueman-project/blueman) -->
 <!-- - Video Player: [mpv](https://mpv.io/) -->
 <!-- - Image Viewer: [imv](https://sr.ht/~exec64/imv/) -->
 <!-- - Document Viewer: [zathura](https://pwmt.org/projects/zathura/) -->
 <!-- - Keyboard Remapper: [Kanata](https://github.com/jtroo/kanata) -->
 <!-- - Text Expander: [Espanso](https://espanso.org/) -->
+- Icons: [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme)
 - Fonts:
   - [Nerd Fonts Symbols](https://www.nerdfonts.com/)
-  <!-- - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux) -->
+  - [Apple Color Emoji for Linux](https://github.com/samuelngs/apple-emoji-linux) <!-- https://gist.github.com/win0err/9d8c7f0feabdfe8a4c9787b02c79ac51 -->
 <!-- </details> -->

@@ -22,5 +22,46 @@
         "group/vitals"
     ],
 
-    "include": [ "~/.config/waybar/*/*" ]
+    "include": [ 
+        "~/.config/waybar/custom/clipboard.jsonc",
+        "~/.config/waybar/custom/emoji.jsonc",
+        //"~/.config/waybar/custom/gpu.jsonc",
+        "~/.config/waybar/custom/keybinds.jsonc",
+        "~/.config/waybar/custom/launcher.jsonc",
+        "~/.config/waybar/custom/media.jsonc",
+        "~/.config/waybar/custom/notification.jsonc",
+        "~/.config/waybar/custom/playerctl.jsonc",
+        "~/.config/waybar/custom/power.jsonc",
+        "~/.config/waybar/custom/prayer.jsonc",
+        "~/.config/waybar/custom/safecharging.jsonc",
+        "~/.config/waybar/custom/screenshot.jsonc",
+        "~/.config/waybar/custom/shortcuts.jsonc",
+        //"~/.config/waybar/custom/updates.jsonc",
+        "~/.config/waybar/custom/weather.jsonc",
+
+        "~/.config/waybar/groups/audio.jsonc",
+        "~/.config/waybar/groups/brightness.jsonc",
+        "~/.config/waybar/groups/day.jsonc",
+        "~/.config/waybar/groups/keyboard.jsonc",
+        "~/.config/waybar/groups/power.jsonc",
+        "~/.config/waybar/groups/shortcuts.jsonc",
+        "~/.config/waybar/groups/vitals.jsonc",
+
+        "~/.config/waybar/modules/backlight.jsonc",
+        "~/.config/waybar/modules/battery.jsonc",
+        "~/.config/waybar/modules/bluetooth.jsonc",
+        "~/.config/waybar/modules/clock.jsonc",
+        "~/.config/waybar/modules/cpu.jsonc",
+        "~/.config/waybar/modules/disk.jsonc",
+        "~/.config/waybar/modules/hyprland.jsonc",
+        "~/.config/waybar/modules/idle_inhibitor.jsonc",
+        "~/.config/waybar/modules/keyboard-state.jsonc",
+        "~/.config/waybar/modules/memory.jsonc",
+        "~/.config/waybar/modules/mpd.jsonc",
+        "~/.config/waybar/modules/network.jsonc",
+        "~/.config/waybar/modules/power-profiles-daemon.jsonc",
+        "~/.config/waybar/modules/privacy.jsonc",
+        "~/.config/waybar/modules/pulseaudio.jsonc",
+        "~/.config/waybar/modules/temperature.jsonc"
+    ]
 }
