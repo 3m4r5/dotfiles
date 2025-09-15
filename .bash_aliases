@@ -4,8 +4,9 @@ alias debug-gtk='env GTK_DEBUG=interactive'
 alias bios='systemctl reboot --firmware-setup'
 alias head='sed 11q'
 
-alias nxe='sudoedit /etc/nixos/configuration.nix'
+alias nxe='$EDITOR ~/.config/nixos/configuration.nix'
 alias nxs='sudo nixos-rebuild switch'
+alias nxu='sudo nix-channel --update && nxs --upgrade'
 
 alias fpi='flatpak install'
 alias fpu='flatpak update'

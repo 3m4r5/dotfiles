@@ -6,6 +6,7 @@
 !setup.sh
 !kanata.kbd
 
+!nixos/
 !hypr/
 !hypr/*
 !hypr/*/*
@@ -13,7 +14,6 @@
 !waybar/*
 !waybar/*/*
 !yazi/
-!fontconfig/
 !gtk-3.0/
 !gtk-4.0/
 !rofi/
@@ -24,4 +24,3 @@
 !VSCodium/*/
 !VSCodium/*/*/
 !scripts/
-!scripts/*
