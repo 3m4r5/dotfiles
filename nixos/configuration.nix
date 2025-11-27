@@ -18,62 +18,154 @@ in
     "${nix-flatpak}/modules/nixos.nix"
   ];
 
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.useOSProber = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/nvme0n1";
+    useOSProber = true;
+  };
 
-  networking.hostName = "nixos";
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    networkmanager.enable = true;
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    # proxy = {
+        # default = "http://user:password@proxy:port/";
+        # noProxy = "127.0.0.1,localhost,internal.domain";
+    # };
+  };
 
   time.timeZone = "Asia/Amman";
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ar_JO.UTF-8";
-    LC_IDENTIFICATION = "ar_JO.UTF-8";
-    LC_MEASUREMENT = "ar_JO.UTF-8";
-    LC_MONETARY = "ar_JO.UTF-8";
-    LC_NAME = "ar_JO.UTF-8";
-    LC_NUMERIC = "ar_JO.UTF-8";
-    LC_PAPER = "ar_JO.UTF-8";
-    LC_TELEPHONE = "ar_JO.UTF-8";
-    LC_TIME = "ar_JO.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "ar_JO.UTF-8";
+      LC_IDENTIFICATION = "ar_JO.UTF-8";
+      LC_MEASUREMENT = "ar_JO.UTF-8";
+      LC_MONETARY = "ar_JO.UTF-8";
+      LC_NAME = "ar_JO.UTF-8";
+      LC_NUMERIC = "ar_JO.UTF-8";
+      LC_PAPER = "ar_JO.UTF-8";
+      LC_TELEPHONE = "ar_JO.UTF-8";
+      LC_TIME = "ar_JO.UTF-8";
+    };
   };
 
-  environment.etc = {
-    "xdg/applications/unzip.desktop".text = ''
-      [Desktop Entry]
-      Encoding=UTF-8
-      Type=Application
-      NoDisplay=true
-      Exec=unzip %f
-      Name=unzip
-    '';
-
-    "xdg/mimeapps.list".text = ''
-      [Default Applications]
-      x-scheme-handler/file=re.sonny.Junction.desktop
-      inode/directory=re.sonny.Junction.desktop
-      x-scheme-handler/http=re.sonny.Junction.desktop
-      x-scheme-handler/https=re.sonny.Junction.desktop
-    '';
+  environment = {
+    systemPackages = with pkgs; [ # List packages installed in system profile. To search, run: $ nix search wget
+      adwaita-icon-theme
+      waybar networkmanagerapplet swaynotificationcenter udiskie polkit_gnome # desktop environment
+      rofi-wayland rofimoji # menus
+      vscodium zed-editor git nixd # development
+      kitty yazi junction ripdrag unzip nerd-fonts.symbols-only # terminal & files
+      wl-clipboard wtype cliphist # clipboard
+      slurp grim satty # screenshot
+      openvpn remmina # connect
+      mitmproxy zola brave epiphany # web dev
+      (python313.withPackages (ps: with ps; [
+        requests
+        beautifulsoup4
+      ]))
+    ];
+    sessionVariables.NIXOS_OZONE_WL = "1"; # hint electron apps to use wayland
+    variables = {
+        XCURSOR_THEME = "Adwaita";
+        XCURSOR_SIZE = "16";
+    };
+    etc = {
+        "xdg/applications/unzip.desktop".text = ''
+        [Desktop Entry]
+        Encoding=UTF-8
+        Type=Application
+        NoDisplay=true
+        Exec=unzip %f
+        Name=unzip
+        '';
+        "xdg/mimeapps.list".text = ''
+        [Default Applications]
+        x-scheme-handler/file=re.sonny.Junction.desktop
+        inode/directory=re.sonny.Junction.desktop
+        x-scheme-handler/http=re.sonny.Junction.desktop
+        x-scheme-handler/https=re.sonny.Junction.desktop
+        '';
+    };
   };
 
-  services.printing.enable = true; # Enable CUPS to print documents.
+  xdg = {
+    portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+    mime = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = "re.sonny.Junction.desktop";
+        "x-scheme-handler/http" = "re.sonny.Junction.desktop";
+        "x-scheme-handler/https" = "re.sonny.Junction.desktop";
+        "x-scheme-handler/file" = "re.sonny.Junction.desktop";
+        "inode/directory" = "re.sonny.Junction.desktop";
+        "x-scheme-handler/mailto" = "re.sonny.Junction.desktop";
+      };
+    };
+  };
 
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true; # Enable sound with pipewire.
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # jack.enable = true;
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    # media-session.enable = true;
+  systemd.user.services = {
+    polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
+
+    udiskie = {
+      description = "Automount removable drives with udiskie";
+      wantedBy = [ "default.target" ];
+      serviceConfig = {
+        ExecStart = "${pkgs.udiskie}/bin/udiskie -t";
+      };
+    };
+  };
+
+  services = { # List services that you want to enable
+    printing.enable = true; # Enable CUPS to print documents.
+    pulseaudio.enable = false;
+    getty.autologinUser = "o";
+    gnome.gnome-keyring.enable = true;
+    udisks2.enable = true;
+    # displayManager.autoLogin.enable = true;
+    # displayManager.autoLogin.user = "o";
+    flatpak = {
+      enable = true;
+      packages = [
+        "app.zen_browser.zen"
+        # "re.sonny.Junction"
+      ];
+      update.auto = {
+        enable = true;
+        onCalendar = "daily";
+      };
+    };
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
+      # jack.enable = true;
+      # media-session.enable = true; # use the example session manager (no others are packaged yet so this is enabled by default, no need to redefine it in your config for now)
+    };
+  };
+
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
   };
 
   users.users.o = {
@@ -83,39 +175,16 @@ in
     # packages = with pkgs; [];
   };
 
-  # services.displayManager.autoLogin.enable = true;
-  # services.displayManager.autoLogin.user = "o";
-  services.getty.autologinUser = "o";
-
   # nixpkgs.config.allowUnfree = true; # Allow unfree packages
-
-  # List packages installed in system profile. To search, run: $ nix search wget
-  environment.systemPackages = with pkgs; [
-    waybar hyprpolkitagent
-    git zed-editor nixd hyprlang
-    unzip
-    junction
-    kitty
-    nerd-fonts.symbols-only
-    yazi
-    rofi-wayland rofimoji
-    swaynotificationcenter
-    wl-clipboard wtype cliphist
-    slurp grim satty
-    openvpn remmina
-    networkmanagerapplet
-    adwaita-icon-theme
-    (python313.withPackages (ps: with ps; [
-      requests
-      beautifulsoup4
-    ]))
-  ];
 
   programs = {
     hyprland = {
       enable = true;
-      withUWSM = true;
       xwayland.enable = true;
+      # extraSessionCommands = ''
+      #      export XCURSOR_THEME=Adwaita
+      #      export XCURSOR_SIZE=16
+      #    '';
     };
     bash = {
       interactiveShellInit = ''
@@ -126,9 +195,7 @@ in
           . ~/.config/.bash_aliases
         fi
 
-        if [[ -z $DISPLAY && $(tty) == /dev/tty1 ]]; then
-          exec Hyprland
-        fi
+        [ "$(tty)" = "/dev/tty1" ] && exec Hyprland
       '';
     };
   };
@@ -224,7 +291,6 @@ in
     ];
   };
 
-  # environment.sessionVariables.NIXOS_OZONE_WL = "1"; # hint electron apps to use wayland:
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -233,14 +299,7 @@ in
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-  services.flatpak = {
-    enable = true;
-    packages = [
-      "app.zen_browser.zen"
-      # "re.sonny.Junction"
-    ];
-  };
+  system.autoUpgrade.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

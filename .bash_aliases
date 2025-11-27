@@ -6,10 +6,6 @@ alias head='sed 11q'
 
 alias nxe='$EDITOR ~/.config/nixos/configuration.nix'
 alias nxs='sudo nixos-rebuild switch'
-alias nxu='sudo nix-channel --update && nxs --upgrade'
-
-alias fpi='flatpak install'
-alias fpu='flatpak update'
 
 alias vpn='pkexec openvpn --config ~/.config/vpn/sslvpn-client-config.ovpn --auth-user-pass ~/.config/vpn/auth.txt'
 

@@ -22,7 +22,7 @@
         "group/vitals"
     ],
 
-    "include": [ 
+    "include": [
         "~/.config/waybar/custom/clipboard.jsonc",
         "~/.config/waybar/custom/emoji.jsonc",
         //"~/.config/waybar/custom/gpu.jsonc",
@@ -54,6 +54,7 @@
         "~/.config/waybar/modules/cpu.jsonc",
         "~/.config/waybar/modules/disk.jsonc",
         "~/.config/waybar/modules/hyprland.jsonc",
+        // "~/.config/waybar/modules/sway.jsonc",
         "~/.config/waybar/modules/idle_inhibitor.jsonc",
         "~/.config/waybar/modules/keyboard-state.jsonc",
         "~/.config/waybar/modules/memory.jsonc",
