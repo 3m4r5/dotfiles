@@ -17,5 +17,7 @@
   "C_Cpp.autocompleteAddParentheses": true,
   "git.autofetch": true,
   "workbench.colorTheme": "GitHub Dark Default",
-  "diffEditor.hideUnchangedRegions.enabled": true
+  "workbench.sideBar.location": "right",
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "git.enableSmartCommit": true
 }
