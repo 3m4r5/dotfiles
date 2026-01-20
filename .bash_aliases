@@ -16,3 +16,8 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+
+[ "$(tty)" = "/dev/tty1" ] && exec Hyprland

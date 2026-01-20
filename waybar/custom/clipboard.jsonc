@@ -2,7 +2,7 @@
     "custom/clipboard": {
         "format": "",
         "tooltip-format": "{}",
-        "on-click": "nwg-clipman",
+        "on-click": ".config/scripts/cliphist-rofi-img.sh | rofi -dmenu | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl",
         "return-type": "txt",
         "exec": "[ \"$(wl-paste)\" == \"\" ] && echo \"clipboard is empty\" || echo \"clipboard: $(wl-paste)\"",
         "interval": 10

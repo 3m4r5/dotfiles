@@ -9,9 +9,9 @@
     "modules": [
       "hyprland/language#short",
       "hyprland/language",
-      // "sway/language",
+      "sway/language",
       "hyprland/submap",
-      // "sway/mode",
+      "sway/mode",
       "keyboard-state",
     ],
   },

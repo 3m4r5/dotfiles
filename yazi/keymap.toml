@@ -1,0 +1,25 @@
+[[mgr.prepend_keymap]]
+on   = "!"
+for  = "unix"
+run  = 'shell "$SHELL" --block'
+desc = "Open $SHELL here"
+
+[[input.prepend_keymap]]
+on   = "<Esc>"
+run  = "close"
+desc = "Cancel input"
+
+[[mgr.prepend_keymap]]
+on = [ "l" ]
+run = "plugin bypass"
+desc = "Recursively enter child directory, skipping children with only a single subdirectory"
+
+[[mgr.prepend_keymap]]
+on = [ "H" ]
+run = "plugin bypass reverse"
+desc = "Recursively enter parent directory, skipping parents with only a single subdirectory"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "i" ]
+run  = "plugin vcs-files"
+desc = "Show Git file changes"

@@ -1,6 +1,7 @@
 *
 !.gitignore
 !.bash_aliases
+!.bashrc
 !README.md
 !install.sh
 !setup.sh
@@ -14,6 +15,8 @@
 !waybar/*
 !waybar/*/*
 !yazi/
+!fontconfig/
+!mpv/
 !gtk-3.0/
 !gtk-4.0/
 !rofi/
