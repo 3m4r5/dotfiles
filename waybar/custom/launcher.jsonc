@@ -1,7 +1,0 @@
-{
-    "custom/launcher": {
-        "format": "󰀻",
-        "tooltip-format": "app launcher",
-        "on-click": "rofi -show drun -theme \"$HOME/.config/rofi/launchers/type-3/style-2.rasi\""
-    }
-}

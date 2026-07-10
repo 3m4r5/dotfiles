@@ -19,5 +19,6 @@
   "workbench.colorTheme": "Dynamic Base16 DankShell",
   "workbench.sideBar.location": "right",
   "diffEditor.hideUnchangedRegions.enabled": true,
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false
 }

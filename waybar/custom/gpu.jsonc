@@ -1,9 +1,0 @@
-{
-    "custom/gpu": {
-        "exec": "rocm-smi -u --json | awk -F'\"' '{print $(NF-1)}'",
-        "tooltip-format": "GPU usage: {}%",
-        "format": "{}% ",
-        "return-type": "txt",
-        "interval": 5
-    }
-}

@@ -1,7 +1,0 @@
-{
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": true,
-        "on-click": "kitty btop"
-    }
-}

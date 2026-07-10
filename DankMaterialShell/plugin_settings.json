@@ -1,0 +1,15 @@
+{
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "dmsLenovoBatterySettings": {
+    "enabled": true
+  },
+  "usbManager": {
+    "enabled": true
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
+  }
+}

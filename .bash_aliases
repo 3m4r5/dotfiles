@@ -20,4 +20,4 @@ function y() {
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
-[ "$(tty)" = "/dev/tty1" ] && exec Hyprland
+[ "$(tty)" = "/dev/tty1" ] && exec niri-session

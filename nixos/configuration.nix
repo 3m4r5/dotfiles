@@ -6,8 +6,8 @@ let # External let binding to fetch nix-flatpak without causing infinite recursi
   nix-flatpak = pkgs.fetchFromGitHub {
     owner = "gmodena";
     repo = "nix-flatpak";
-    rev = "v0.6.0";
-    hash = "sha256-iAVVHi7X3kWORftY+LVbRiStRnQEob2TULWyjMS6dWg=";
+    rev = "v0.7.0";
+    hash = "sha256-7ZCulYUD9RmJIDULTRkGLSW1faMpDlPKcbWJLYHoXcs=";
   };
 in
 
@@ -20,37 +20,19 @@ in
 
   environment = {
     systemPackages = with pkgs; [ # List packages installed in system profile. To search, run: $ nix search wget
-      # desktop environment
-      waybar networkmanagerapplet swaynotificationcenter udiskie polkit_gnome swayosd adwaita-icon-theme
-      # menus
-      rofi rofimoji
-      # terminal & files
-      kitty junction ripdrag ouch nerd-fonts.symbols-only
-      # clipboard
-      wl-clipboard wtype cliphist
-      # screenshot
-      slurp grim satty
-      # connect
-      openvpn remmina
-      # development
-      vscodium zed-editor git nixd devbox
-      # web
-      mitmproxy zola brave epiphany
-      (python313.withPackages (ps: with ps; [
-        requests
-        beautifulsoup4
-      ]))
+      xwayland-satellite udiskie polkit_gnome adwaita-icon-theme # desktop environment
+      kitty junction ripdrag ouch nerd-fonts.symbols-only mpv # terminal & files
+      openvpn remmina # remote connection
+      vscodium zed-editor git nixd # development
+      mitmproxy zola brave epiphany # web
     ];
     sessionVariables.NIXOS_OZONE_WL = "1"; # hint electron apps to use wayland
   };
 
   programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-      withUWSM = true;
-    };
-    bash = { interactiveShellInit = (builtins.readFile ../.bashrc); };
+    niri.enable = true;
+    dms-shell.enable = true;
+    bash.interactiveShellInit = (builtins.readFile ../.bashrc);
     yazi = {
       enable = true;
       initLua = ../yazi/init.lua;
@@ -75,6 +57,7 @@ in
     getty.autologinUser = "o";
     gnome.gnome-keyring.enable = true;
     udisks2.enable = true;
+    espanso.enable = true;
     # displayManager.autoLogin.enable = true;
     # displayManager.autoLogin.user = "o";
     flatpak = {
@@ -99,10 +82,18 @@ in
     };
   };
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/nvme0n1";
-    useOSProber = true;
+  # boot.loader.grub = {
+  #   enable = true;
+  #   device = "/dev/nvme0n1";
+  #   useOSProber = true;
+  # };
+
+  boot = {
+  	loader = {
+  	  systemd-boot.enable = true;
+  	  efi.canTouchEfiVariables = true;
+  	};
+  	initrd.systemd.enable = true;
   };
 
   networking = {
@@ -123,17 +114,17 @@ in
   time.timeZone = "Asia/Amman";
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = {
-      LC_ADDRESS = "ar_JO.UTF-8";
-      LC_IDENTIFICATION = "ar_JO.UTF-8";
-      LC_MEASUREMENT = "ar_JO.UTF-8";
-      LC_MONETARY = "ar_JO.UTF-8";
-      LC_NAME = "ar_JO.UTF-8";
-      LC_NUMERIC = "ar_JO.UTF-8";
-      LC_PAPER = "ar_JO.UTF-8";
-      LC_TELEPHONE = "ar_JO.UTF-8";
-      LC_TIME = "ar_JO.UTF-8";
-    };
+    # extraLocaleSettings = {
+    #   LC_ADDRESS = "ar_JO.UTF-8";
+    #   LC_IDENTIFICATION = "ar_JO.UTF-8";
+    #   LC_MEASUREMENT = "ar_JO.UTF-8";
+    #   LC_MONETARY = "ar_JO.UTF-8";
+    #   LC_NAME = "ar_JO.UTF-8";
+    #   LC_NUMERIC = "ar_JO.UTF-8";
+    #   LC_PAPER = "ar_JO.UTF-8";
+    #   LC_TELEPHONE = "ar_JO.UTF-8";
+    #   LC_TIME = "ar_JO.UTF-8";
+    # };
   };
 
   xdg = {
@@ -179,10 +170,10 @@ in
       nerd-fonts.symbols-only
       (stdenvNoCC.mkDerivation {
         pname = "AppleColorEmoji";
-        version = "18.4";
+        version = "26";
         src = pkgs.fetchurl {
-          url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/v18.4/AppleColorEmoji.ttf";
-          sha256 = "1ggahpw54rjpxirjbyarwd5gvvg1hi08zw4c1nab8dqls5xhgzd4";
+          url = "https://github.com/samuelngs/apple-emoji-ttf/releases/download/macos-26-20260613-f1fc560b/AppleColorEmoji-Linux.ttf";
+          sha256 = "uMjtl/ZCuJuko2o+CWYZ8IBdBswlrhEW5pU7mBQq4gw=";
         };
         dontUnpack = true;
         installPhase = ''
@@ -215,5 +206,5 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  # system.stateVersion = "26.05"; # Did you read the comment?
 }
