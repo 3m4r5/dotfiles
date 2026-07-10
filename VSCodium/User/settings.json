@@ -8,7 +8,7 @@
   "editor.renderWhitespace": "all",
   "editor.unicodeHighlight.includeComments": true,
   "editor.unicodeHighlight.nonBasicASCII": true,
-  "editor.fontSize": 20,
+  "editor.fontSize": 14,
   "terminal.integrated.enableMultiLinePasteWarning": "never",
   "cph.general.autoShowJudge": false,
   "cph.general.defaultLanguage": "cpp",
@@ -16,7 +16,7 @@
   "cph.language.cpp.Args": "-std=c++20",
   "C_Cpp.autocompleteAddParentheses": true,
   "git.autofetch": true,
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "Dynamic Base16 DankShell",
   "workbench.sideBar.location": "right",
   "diffEditor.hideUnchangedRegions.enabled": true,
   "git.enableSmartCommit": true

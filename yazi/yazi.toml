@@ -7,15 +7,5 @@ open = [
 
 [open]
 prepend_rules = [
-	{ name = "*", use = "open" },
+	{ url = "*", use = "open" },
 ]
-
-[[plugin.prepend_fetchers]]
-id  = "git"
-url = "*"
-run = "git"
-
-[[plugin.prepend_fetchers]]
-id  = "git"
-url = "*/"
-run = "git"
