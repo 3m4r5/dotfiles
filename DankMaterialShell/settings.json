@@ -465,18 +465,9 @@
         {
           "id": "clock",
           "enabled": true
-        },
-        {
-          "id": "weather",
-          "enabled": false
         }
       ],
       "rightWidgets": [
-        {
-          "id": "diskUsage",
-          "enabled": false,
-          "mountPath": "/"
-        },
         {
           "id": "battery",
           "enabled": true
@@ -498,9 +489,18 @@
           "enabled": true
         },
         {
+          "id": "amdGpuMonitorRevive",
+          "enabled": true
+        },
+        {
           "id": "memUsage",
           "enabled": true,
           "showSwap": false
+        },
+        {
+          "id": "diskUsage",
+          "enabled": true,
+          "mountPath": "/"
         },
         {
           "id": "notificationButton",

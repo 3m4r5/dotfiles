@@ -20,7 +20,7 @@ in
 
   environment = {
     systemPackages = with pkgs; [ # List packages installed in system profile. To search, run: $ nix search wget
-      xwayland-satellite udiskie polkit_gnome adwaita-icon-theme # desktop environment
+      xwayland-satellite udiskie polkit_gnome adwaita-icon-theme amdgpu_top # desktop environment
       kitty junction ripdrag ouch nerd-fonts.symbols-only mpv # terminal & files
       openvpn remmina # remote connection
       vscodium zed-editor git nixd # development
