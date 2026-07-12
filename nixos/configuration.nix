@@ -3,6 +3,7 @@
 # and in the NixOS manual (accessible by running 'nixos-help').
 let # External let binding to fetch nix-flatpak without causing infinite recursion.
   pkgs = import <nixpkgs> {};
+  unstable = import <unstable> {};
   nix-flatpak = pkgs.fetchFromGitHub {
     owner = "gmodena";
     repo = "nix-flatpak";
@@ -23,7 +24,7 @@ in
       xwayland-satellite udiskie polkit_gnome adwaita-icon-theme amdgpu_top # desktop environment
       kitty junction ripdrag ouch nerd-fonts.symbols-only mpv # terminal & files
       openvpn remmina # remote connection
-      vscodium zed-editor git nixd # development
+      vscodium zed-editor git git-credential-manager nixd # development
       mitmproxy zola brave epiphany # web
     ];
     sessionVariables.NIXOS_OZONE_WL = "1"; # hint electron apps to use wayland
@@ -31,7 +32,10 @@ in
 
   programs = {
     niri.enable = true;
-    dms-shell.enable = true;
+    dms-shell = {
+      enable = true;
+      package = unstable.dms-shell;
+    };
     bash.interactiveShellInit = (builtins.readFile ../.bashrc);
     yazi = {
       enable = true;
