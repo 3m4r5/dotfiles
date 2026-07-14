@@ -590,7 +590,9 @@
   "updaterAllowAUR": true,
   "displayNameMode": "system",
   "screenPreferences": {
-    "wallpaper": ["all"]
+    "wallpaper": [
+      "all"
+    ]
   },
   "showOnLastDisplay": {},
   "niriOutputSettings": {},
@@ -614,9 +616,13 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 3,
-      "screenPreferences": ["all"],
+      "screenPreferences": [
+        "all"
+      ],
       "showOnLastDisplay": true,
-      "leftWidgets": ["workspaceSwitcher"],
+      "leftWidgets": [
+        "workspaceSwitcher"
+      ],
       "centerWidgets": [],
       "rightWidgets": [
         {
@@ -746,7 +752,9 @@
   "desktopClockY": -1,
   "desktopClockWidth": 280,
   "desktopClockHeight": 180,
-  "desktopClockDisplayPreferences": ["all"],
+  "desktopClockDisplayPreferences": [
+    "all"
+  ],
   "systemMonitorEnabled": false,
   "systemMonitorShowHeader": true,
   "systemMonitorTransparency": 0.8,
@@ -783,7 +791,9 @@
   "systemMonitorY": -1,
   "systemMonitorWidth": 320,
   "systemMonitorHeight": 480,
-  "systemMonitorDisplayPreferences": ["all"],
+  "systemMonitorDisplayPreferences": [
+    "all"
+  ],
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
@@ -801,7 +811,9 @@
         "showDate": true,
         "showAnalogNumbers": false,
         "showAnalogSeconds": true,
-        "displayPreferences": ["all"],
+        "displayPreferences": [
+          "all"
+        ],
         "showDigitalSeconds": false
       },
       "positions": {
@@ -825,7 +837,9 @@
       "name": "Dank RSS Widget",
       "enabled": false,
       "config": {
-        "displayPreferences": ["all"]
+        "displayPreferences": [
+          "all"
+        ]
       },
       "positions": {
         "HDMI-A-1": {
@@ -860,7 +874,9 @@
       "name": "Dank Desktop Weather",
       "enabled": false,
       "config": {
-        "displayPreferences": ["all"]
+        "displayPreferences": [
+          "all"
+        ]
       },
       "positions": {
         "HDMI-A-1": {
@@ -903,7 +919,11 @@
   "clipboardEnterToPaste": true,
   "clipboardRememberTypeFilter": false,
   "clipboardTypeFilter": "all",
-  "clipboardVisibleEntryActions": ["pin", "edit", "delete"],
+  "clipboardVisibleEntryActions": [
+    "pin",
+    "edit",
+    "delete"
+  ],
   "launcherPluginVisibility": {
     "calculator": {
       "allowWithoutTrigger": true
@@ -915,7 +935,9 @@
   "frameRounding": 14,
   "frameColor": "",
   "frameOpacity": 0.46,
-  "frameScreenPreferences": ["all"],
+  "frameScreenPreferences": [
+    "all"
+  ],
   "frameBarSize": 40,
   "frameShowOnOverview": true,
   "frameBlurEnabled": true,
