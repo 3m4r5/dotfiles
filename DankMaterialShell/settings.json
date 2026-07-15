@@ -287,13 +287,7 @@
   "browserPickerViewMode": "grid",
   "browserUsageHistory": {},
   "appPickerViewMode": "grid",
-  "filePickerUsageHistory": {
-    "re.sonny.Junction": {
-      "count": 1,
-      "lastUsed": 1783896691969,
-      "name": "Junction"
-    }
-  },
+  "filePickerUsageHistory": {},
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 6,
   "spotlightCloseNiriOverview": true,
